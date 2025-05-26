@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruYan - MAZOL Ecosystem</title>
+    <style>
+        /* Core Styles */
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a192f;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .header {
+            margin: 30px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #88aadd;
+            margin-top: 8px;
+        }
+
+        /* Countdown Styles */
+        .countdown-container {
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(0,40,80,0.3);
+            border-radius: 15px;
+            max-width: 500px;
+        }
+
+        .countdown-title {
+            color: #00ff88;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        #countdown {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00ff88;
+        }
+
+        /* Wallet Button */
+        #connectWallet {
+            background: #00ff88;
+            color: #0a192f;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>TruYan</h1>
+        <div class="subtitle">Social Media with Treasure by MAZOL</div>
+    </div>
+
+    <div class="countdown-container">
+        <div class="countdown-title">DAYS TO LAUNCH: BUY</div>
+        <div id="countdown">Loading...</div>
+    </div>
+
+    <button id="connectWallet">Connect Wallet</button>
+
+    <script>
+        // Instant Countdown Timer
+        const icoStartDate = new Date('2024-08-01').getTime(); // SET YOUR DATE
+        
+        function updateTimer() {
+            const now = Date.now();
+            const icoEnd = icoStartDate + (90 * 86400000);
+            
+            if(now > icoEnd) {
+                document.getElementById('countdown').innerHTML = "ICO ENDED";
+                return;
+            }
+
+            const diff = icoEnd - now;
+            const days = Math.floor(diff / 86400000);
+            const hours = Math.floor((diff % 86400000) / 3600000);
+            const mins = Math.floor((diff % 3600000) / 60000);
+            const secs = Math.floor((diff % 60000) / 1000);
+
+            document.getElementById('countdown').innerHTML = `
+                ${days}d ${hours}h ${mins}m ${secs}s
+            `;
+        }
+
+        // Initialize immediately
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        // Wallet Connection
+        document.getElementById('connectWallet').onclick = async () => {
+            if(window.ethereum) {
+                try {
+                    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                    alert(`Connected: ${accounts[0].slice(0,6)}...${accounts[0].slice(-4)}`);
+                } catch(error) {
+                    alert('Connection failed: ' + error.message);
+                }
+            } else {
+                alert('Install MetaMask!');
+            }
+        };
+    </script>
+</body>
+</html>
