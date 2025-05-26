@@ -2,59 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TruYan MZLx Platform</title>
-  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan - MAZOL Ecosystem</title>
+  <link rel="stylesheet" href="main.css?v=3">
 </head>
 <body>
-  <!-- Price Header -->
-  <header>
-    <h1>MZLx: $<span id="currentPrice">0.001</span></h1>
-    <div id="countdown">Next price change: 23:59:59</div>
-  </header>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="brand-header">
+      <h1>TruYan</h1>
+      <p class="subtitle">Social Media Powered by MAZOL</p>
+    </header>
 
-  <!-- Main Interface -->
-  <main>
+    <!-- Price Display -->
+    <div class="price-container">
+      <h2>MAZOL (MZLx)</h2>
+      <div class="price-box">
+        <span id="currentPrice">0.001</span> USD
+      </div>
+    </div>
+
     <!-- Wallet Section -->
     <section class="card">
-      <button id="connectWallet">Connect Wallet</button>
-      <div id="walletAddress"></div>
+      <button id="connectWallet" class="action-btn">Connect Wallet</button>
+      <div id="walletAddress" class="wallet-address"></div>
     </section>
 
-    <!-- Buy/Sell Interface -->
+    <!-- Exchange Interface -->
     <section class="card">
-      <h2>Exchange MZLx</h2>
-      <select id="currencySelect">
-        <option>NGN</option>
-        <option>USD</option>
-        <option>USDT</option>
-      </select>
-      <input type="number" id="exchangeAmount" placeholder="Amount">
-      <button onclick="handleExchange()">Execute</button>
-    </section>
-
-    <!-- Mining Dashboard -->
-    <section class="card">
-      <h2>Mining Control</h2>
-      <div class="mining-stats">
-        <span>Speed: 1.2 MZLx/day</span>
-        <button id="startMining">Start Mining</button>
+      <div class="exchange-controls">
+        <select id="currencySelect" class="form-input">
+          <option>NGN</option>
+          <option>USD</option>
+          <option>USDT</option>
+        </select>
+        <input type="number" id="exchangeAmount" class="form-input" placeholder="Amount">
+        <button class="action-btn" onclick="handleExchange()">Exchange Now</button>
       </div>
     </section>
 
-    <!-- Admin Panel (Password: admin123) -->
-    <section class="card admin-panel">
-      <input type="password" id="adminPass" placeholder="Admin Password">
-      <button onclick="showAdmin()">Unlock</button>
-      <div id="adminControls" style="display:none;">
-        <h3>Admin Controls</h3>
-        <input type="number" id="newPrice" step="0.001">
-        <button onclick="updatePrice()">Set New Price</button>
+    <!-- Mining Section -->
+    <section class="card">
+      <div class="mining-controls">
+        <button id="startMining" class="action-btn">Start Mining</button>
+        <span class="mining-speed">Speed: 1.2 MZLx/day</span>
       </div>
     </section>
-  </main>
+  </div>
 
   <script src="web3.min.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
