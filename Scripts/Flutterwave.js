@@ -5,7 +5,7 @@ function initiatePurchase() {
   const referralCode = document.getElementById('referralCode').value;
   
   FlutterwaveCheckout({
-    public_key: FLUTTERWAVE_KEY,
+    public_key: FLWPUBK-2f50534950448cd5f543968bc740c57f-X,
     tx_ref: Date.now().toString(),
     amount: calculateNairaEquivalent(amount),
     currency: 'NGN',
