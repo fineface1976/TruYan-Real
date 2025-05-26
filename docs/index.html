@@ -1,36 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TruYan ICO</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <title>TruYan Live</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ico-dashboard">
-    <!-- Price Display -->
-    <div id="priceBox">
-      <h2>Current Price: $<span id="currentPrice">0.001</span></h2>
-      <p>Next increase in: <span id="countdown">23:59:59</span></p>
-    </div>
-    
-    <!-- Purchase Interface -->
-    <div class="buy-section">
-      <input type="number" id="buyAmount" min="50" step="1" placeholder="Enter MZLx">
-      <button onclick="initiatePurchase()">Buy Tokens</button>
-      <p id="minAmount">Minimum: 50 MZLx</p>
-    </div>
-    
-    <!-- Flutterwave Payment -->
-    <div id="flutterwaveContainer"></div>
-    
-    <!-- Referral System -->
-    <div class="referral-box">
-      <input type="text" id="referralCode" placeholder="Referral Code (optional)">
-      <button onclick="applyReferral()">Apply</button>
-    </div>
-  </div>
+  <h1>TruYan is Live! 🚀</h1>
+  <p>MZLx Price: $<span id="price">0.001</span></p>
+  <button onclick="connectWallet()">Connect Wallet</button>
   
-  <script src="scripts/web3.js"></script>
-  <script src="scripts/flutterwave.js"></script>
-  <script src="scripts/referrals.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
