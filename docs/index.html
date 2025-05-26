@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>TruYan Live</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruYan Social Media by Mazol </title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1>TruYan ...powered by MAZOL! 🚀</h1>
-  <p>MZLx Price: $<span id="price">0.001</span></p>
-  <button onclick="connectWallet()">Connect Wallet</button>
-  
+  <!-- Price Header -->
+  <header>
+    <h1>Mzlx: $<span id="currentPrice">0.001</span></h1>
+    <div id="countdown">Next price change: 23:59:59</div>
+  </header>
+
+  <!-- Main Interface -->
+  <main>
+    <!-- Wallet Section -->
+    <section class="card">
+      <button id="connectWallet">Connect Wallet</button>
+      <div id="walletAddress"></div>
+    </section>
+
+    <!-- Buy/Sell Interface -->
+    <section class="card">
+      <h2>Exchange MZLx</h2>
+      <select id="currencySelect">
+        <option>NGN</option>
+        <option>USD</option>
+        <option>USDT</option>
+      </select>
+      <input type="number" id="exchangeAmount" placeholder="Amount">
+      <button onclick="handleExchange()">Execute</button>
+    </section>
+
+    <!-- Mining Dashboard -->
+    <section class="card">
+      <h2>Mining Control</h2>
+      <div class="mining-stats">
+        <span>Speed: 1.2 MZLx/day</span>
+        <button id="startMining">Start Mining</button>
+      </div>
+    </section>
+
+    <!-- Admin Panel (Password: admin123) -->
+    <section class="card admin-panel">
+      <input type="password" id="adminPass" placeholder="Admin Password">
+      <button onclick="showAdmin()">Unlock</button>
+      <div id="adminControls" style="display:none;">
+        <h3>Admin Controls</h3>
+        <input type="number" id="newPrice" step="0.001">
+        <button onclick="updatePrice()">Set New Price</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="web3.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
