@@ -1,24 +1,40 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TruYan - MAZOL Ecosystem</title>
-  <link rel="stylesheet" href="main.css?v=3">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
 </head>
 <body>
   <div class="container">
     <!-- Header Section -->
     <header class="brand-header">
       <h1>TruYan</h1>
-      <p class="subtitle">Social Media Powered by MAZOL</p>
+      <p class="subtitle">Social Media with Treasure by MAZOL</p>
     </header>
 
-    <!-- Price Display -->
-    <div class="price-container">
-      <h2>MAZOL (MZLx)</h2>
-      <div class="price-box">
-        <span id="currentPrice">0.001</span> USD
+    <!-- ICO Countdown -->
+    <div class="countdown-section">
+      <h2 class="countdown-title">COUNTDOWN TO LAUNCH: BUY NOW</h2>
+      <div id="countdownTimer" class="countdown-box">
+        <div class="time-segment">
+          <span id="days">90</span>
+          <label>DAYS</label>
+        </div>
+        <div class="time-segment">
+          <span id="hours">00</span>
+          <label>HOURS</label>
+        </div>
+        <div class="time-segment">
+          <span id="minutes">00</span>
+          <label>MINUTES</label>
+        </div>
+        <div class="time-segment">
+          <span id="seconds">00</span>
+          <label>SECONDS</label>
+        </div>
       </div>
     </div>
 
@@ -36,21 +52,12 @@
           <option>USD</option>
           <option>USDT</option>
         </select>
-        <input type="number" id="exchangeAmount" class="form-input" placeholder="Amount">
+        <input type="number" id="exchangeAmount" class="form-input" placeholder="Enter Amount">
         <button class="action-btn" onclick="handleExchange()">Exchange Now</button>
-      </div>
-    </section>
-
-    <!-- Mining Section -->
-    <section class="card">
-      <div class="mining-controls">
-        <button id="startMining" class="action-btn">Start Mining</button>
-        <span class="mining-speed">Speed: 1.2 MZLx/day</span>
       </div>
     </section>
   </div>
 
-  <script src="web3.min.js"></script>
-  <script src="app.js?v=3"></script>
+  <script src="app.js"></script>
 </body>
 </html>
