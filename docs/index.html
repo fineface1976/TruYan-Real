@@ -2,60 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TruYan - MAZOL Ecosystem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruYan ICO</title>
   <link rel="stylesheet" href="main.css">
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <!-- Header Section -->
-    <header class="brand-header">
+    <!-- Header -->
+    <header class="header">
       <h1>TruYan</h1>
       <p class="subtitle">Social Media with Treasure by MAZOL</p>
     </header>
 
-    <!-- ICO Countdown -->
+    <!-- Price Display -->
+    <div class="price-display">
+      <h2>MAZOL (MZLx)</h2>
+      <div class="price">$<span id="currentPrice">0.001</span></div>
+    </div>
+
+    <!-- Countdown -->
     <div class="countdown-section">
-      <h2 class="countdown-title">COUNTDOWN TO LAUNCH: BUY NOW</h2>
-      <div id="countdownTimer" class="countdown-box">
-        <div class="time-segment">
-          <span id="days">90</span>
-          <label>DAYS</label>
-        </div>
-        <div class="time-segment">
-          <span id="hours">00</span>
-          <label>HOURS</label>
-        </div>
-        <div class="time-segment">
-          <span id="minutes">00</span>
-          <label>MINUTES</label>
-        </div>
-        <div class="time-segment">
-          <span id="seconds">00</span>
-          <label>SECONDS</label>
-        </div>
+      <h3>DAYS TO LAUNCH: BUY</h3>
+      <div id="countdown">
+        <span id="days">90</span>d 
+        <span id="hours">00</span>h 
+        <span id="minutes">00</span>m
       </div>
     </div>
 
-    <!-- Wallet Section -->
-    <section class="card">
-      <button id="connectWallet" class="action-btn">Connect Wallet</button>
-      <div id="walletAddress" class="wallet-address"></div>
-    </section>
-
-    <!-- Exchange Interface -->
-    <section class="card">
-      <div class="exchange-controls">
-        <select id="currencySelect" class="form-input">
-          <option>NGN</option>
-          <option>USD</option>
-          <option>USDT</option>
-        </select>
-        <input type="number" id="exchangeAmount" class="form-input" placeholder="Enter Amount">
-        <button class="action-btn" onclick="handleExchange()">Exchange Now</button>
-      </div>
-    </section>
+    <!-- Wallet -->
+    <button id="connectBtn">Connect Wallet</button>
   </div>
 
   <script src="app.js"></script>
