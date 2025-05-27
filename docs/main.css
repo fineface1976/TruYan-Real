@@ -1,43 +1,33 @@
- /* Core Styles - No Scroll */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  background: #0a192f;
-  color: white;
+ /* Core Styles */
+:root {
+  --deep-blue: #0a192f;
+  --neon-green: #00ff88;
+  --pure-white: #ffffff;
+  --card-bg: #1a365f;
+}
+
+body {
+  background: var(--deep-blue);
+  color: var(--pure-white);
   font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
   padding: 15px;
-  height: 100vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
 }
 
-/* Card Design */
-.card {
-  background: #1a365f;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
+/* Header */
 .header-card {
   text-align: center;
-  background: linear-gradient(135deg, #1a365f, #0f2a4a);
-  padding: 15px;
+  padding: 20px;
 }
 
-/* Header */
 .header-card h1 {
   font-size: 2.5rem;
   margin: 0;
@@ -45,12 +35,18 @@ html, body {
 }
 
 .subtitle {
-  font-size: 0.9rem; /* Reduced font size */
+  font-size: 1rem; /* Adjusted to your request */
   color: #88aadd;
-  margin-top: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-top: 5px;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Price Display */
@@ -65,7 +61,7 @@ html, body {
 
 .price {
   font-size: 2rem;
-  color: #00ff88;
+  color: var(--neon-green);
   font-weight: bold;
 }
 
@@ -75,144 +71,49 @@ html, body {
 }
 
 .countdown-section h3 {
-  color: #00ff88;
+  color: var(--neon-green);
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
 
 #countdown {
   font-size: 1.8rem;
-  color: #00ff88;
+  color: var(--neon-green);
   font-weight: bold;
 }
 
-/* Wallet Options */
-.wallet-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.wallet-btn {
-  background: rgba(0,255,136,0.1);
-  border: 1px solid #00ff88;
-  color: white;
-  padding: 12px;
+/* Wallet Button */
+.connect-btn {
+  background: var(--neon-green);
+  color: var(--deep-blue);
+  border: none;
+  padding: 15px;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
   cursor: pointer;
-}
-
-.wallet-btn img {
-  width: 20px;
-  height: 20px;
 }
 
 .wallet-address {
-  margin-top: 15px;
+  margin-top: 10px;
   font-family: monospace;
   word-break: break-all;
   font-size: 0.8rem;
-  color: #88aadd;
   text-align: center;
-}
-
-/* Exchange Section */
-.exchange-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.exchange-select, .exchange-input {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #2e5266;
-  background: rgba(255,255,255,0.05);
-  color: white;
-}
-
-.exchange-btn {
-  background: #00ff88;
-  color: #0a192f;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #1a365f;
-  padding: 25px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 300px;
-  text-align: center;
-}
-
-.fingerprint {
-  margin: 20px 0;
-  padding: 20px;
-  border: 2px dashed #00ff88;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  cursor: pointer;
-}
-
-.fingerprint p {
-  margin-top: 10px;
-  font-size: 0.8rem;
-}
-
-.modal-close {
-  background: transparent;
-  border: 1px solid #ff5555;
-  color: #ff5555;
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin-top: 15px;
-  cursor: pointer;
 }
 
 /* Mobile Optimization */
 @media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-  
-  .card {
-    padding: 15px;
-  }
-  
   .header-card h1 {
     font-size: 2rem;
   }
   
   .subtitle {
-    font-size: 0.8rem;
+    font-size: 0.95rem; /* Slightly larger on mobile */
+  }
+  
+  .card {
+    padding: 15px;
   }
 }
