@@ -8,30 +8,51 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <header class="header">
+    <!-- Header Card -->
+    <div class="card header-card">
       <h1>TruYan</h1>
       <p class="subtitle">Social Media with Treasure by MAZOL</p>
-    </header>
-
-    <!-- Price Display -->
-    <div class="price-display">
-      <h2>MAZOL (MZLx)</h2>
-      <div class="price">$<span id="currentPrice">0.001</span></div>
     </div>
 
-    <!-- Countdown -->
-    <div class="countdown-section">
-      <h3>DAYS TO LAUNCH: BUY</h3>
-      <div id="countdown">
-        <span id="days">90</span>d 
-        <span id="hours">00</span>h 
-        <span id="minutes">00</span>m
+    <!-- Price Card -->
+    <div class="card">
+      <div class="price-display">
+        <h2>MAZOL (MZLx)</h2>
+        <div class="price">$<span id="currentPrice">0.001</span></div>
       </div>
     </div>
 
-    <!-- Wallet -->
-    <button id="connectBtn">Connect Wallet</button>
+    <!-- Countdown Card -->
+    <div class="card">
+      <div class="countdown-section">
+        <h3>DAYS TO LAUNCH: BUY</h3>
+        <div id="countdown">
+          <span id="days">90</span>d 
+          <span id="hours">00</span>h 
+          <span id="minutes">00</span>m
+        </div>
+      </div>
+    </div>
+
+    <!-- Exchange Card -->
+    <div class="card">
+      <div class="exchange-section">
+        <h3>Exchange MZLx</h3>
+        <select class="exchange-select">
+          <option>NGN</option>
+          <option>USD</option>
+          <option>USDT</option>
+        </select>
+        <input type="number" class="exchange-input" placeholder="Amount">
+        <button class="exchange-btn">Swap</button>
+      </div>
+    </div>
+
+    <!-- Wallet Card -->
+    <div class="card">
+      <button id="connectBtn" class="connect-btn">Connect Wallet</button>
+      <div id="walletAddress" class="wallet-address"></div>
+    </div>
   </div>
 
   <script src="app.js"></script>
