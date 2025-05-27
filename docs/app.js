@@ -2,6 +2,16 @@
 const ICO_START_DATE = new Date('2024-08-01'); // SET YOUR DATE
 const ICO_DAYS = 90;
 
+// DOM Elements
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const externalWalletBtn = document.getElementById('externalWalletBtn');
+const platformWalletBtn = document.getElementById('platformWalletBtn');
+const walletModal = document.getElementById('walletModal');
+const fingerprintBtn = document.getElementById('fingerprintBtn');
+const closeModal = document.getElementById('closeModal');
+
 // Initialize Countdown
 function updateCountdown() {
   const now = new Date();
@@ -19,25 +29,57 @@ function updateCountdown() {
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-  document.getElementById('days').textContent = days;
-  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+  daysEl.textContent = days;
+  hoursEl.textContent = hours.toString().padStart(2, '0');
+  minutesEl.textContent = minutes.toString().padStart(2, '0');
 }
 
-// Wallet Connection
-document.getElementById('connectBtn').addEventListener('click', async () => {
+// External Wallet Connection
+externalWalletBtn.addEventListener('click', async () => {
   if (window.ethereum) {
     try {
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      const walletDisplay = `${accounts[0].slice(0,6)}...${accounts[0].slice(-4)}`;
-      document.getElementById('walletAddress').textContent = walletDisplay;
+      displayWallet(accounts[0]);
     } catch (error) {
-      console.error(error);
+      console.error('Connection failed:', error);
     }
   } else {
-    alert('Install MetaMask!');
+    alert('Please install MetaMask or another Web3 wallet!');
   }
 });
+
+// Platform Wallet Authentication
+platformWalletBtn.addEventListener('click', () => {
+  walletModal.style.display = 'flex';
+});
+
+fingerprintBtn.addEventListener('click', () => {
+  // In a real app, this would trigger device biometrics API
+  setTimeout(() => {
+    const platformWallet = generatePlatformWallet();
+    displayWallet(platformWallet);
+    walletModal.style.display = 'none';
+  }, 1000);
+});
+
+closeModal.addEventListener('click', () => {
+  walletModal.style.display = 'none';
+});
+
+// Helper Functions
+function displayWallet(address) {
+  const displayAddress = `${address.slice(0,6)}...${address.slice(-4)}`;
+  document.getElementById('walletAddress').innerHTML = `
+    Connected: <strong>${displayAddress}</strong>
+    <small>${address}</small>
+  `;
+}
+
+function generatePlatformWallet() {
+  // In production, this would use Web3.js to generate a non-custodial wallet
+  const randomHex = [...Array(40)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+  return `0x${randomHex}`;
+}
 
 // Exchange Simulation
 document.querySelector('.exchange-btn').addEventListener('click', () => {
@@ -50,4 +92,4 @@ document.querySelector('.exchange-btn').addEventListener('click', () => {
 
 // Initialize
 updateCountdown();
-setInterval(updateCountdown, 60000);
+setInterval(updateCountdown, 60000); // Update every minute
