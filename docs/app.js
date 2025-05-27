@@ -1,62 +1,51 @@
- // ICO Countdown Configuration
-const ICO_START_DATE = new Date('2024-08-01'); // SET YOUR START DATE
-const ICO_DAYS = 90;
+ // ICO Configuration
+const ICO_START_DATE = new Date('2024-08-01'); // SET YOUR DATE HERE
+const ICO_DURATION_DAYS = 90;
 
-// Initialize Web3
-if (typeof window.ethereum !== 'undefined') {
-  window.web3 = new Web3(window.ethereum);
-} else {
-  alert('Please install MetaMask to continue!');
-}
+// DOM Elements
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const connectBtn = document.getElementById('connectBtn');
 
-// Countdown Timer Logic
+// Initialize Countdown Immediately
 function updateCountdown() {
-  const now = new Date().getTime();
-  const startTime = ICO_START_DATE.getTime();
-  const endTime = startTime + (ICO_DAYS * 24 * 60 * 60 * 1000);
+  const now = new Date();
+  const endDate = new Date(ICO_START_DATE);
+  endDate.setDate(endDate.getDate() + ICO_DURATION_DAYS);
   
-  if (now > endTime) {
-    document.getElementById('countdownTimer').style.display = 'none';
-    document.querySelector('.countdown-title').textContent = 'ICO LAUNCHED!';
+  // If ICO ended
+  if (now >= endDate) {
+    document.querySelector('.countdown-title').textContent = 'ICO HAS LAUNCHED!';
+    document.getElementById('countdown').style.display = 'none';
     return;
   }
-
-  const timeLeft = endTime - now;
   
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-  document.getElementById('days').textContent = days.toString().padStart(2, '0');
-  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-  document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+  const diff = endDate - now;
+  
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  
+  daysEl.textContent = days.toString().padStart(2, '0');
+  hoursEl.textContent = hours.toString().padStart(2, '0');
+  minutesEl.textContent = minutes.toString().padStart(2, '0');
 }
 
 // Wallet Connection
-document.getElementById('connectWallet').addEventListener('click', async () => {
-  try {
-    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-    const wallet = accounts[0];
-    document.getElementById('walletAddress').textContent = 
-      `${wallet.slice(0, 6)}...${wallet.slice(-4)}`;
-  } catch (error) {
-    console.error('Wallet connection failed:', error);
+connectBtn.addEventListener('click', async () => {
+  if (window.ethereum) {
+    try {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      alert(`Connected: ${accounts[0].slice(0,6)}...${accounts[0].slice(-4)}`);
+    } catch (error) {
+      alert('Connection failed: ' + error.message);
+    }
+  } else {
+    alert('MetaMask not detected!');
   }
 });
 
-// Exchange Handler
-function handleExchange() {
-  const amount = document.getElementById('exchangeAmount').value;
-  const currency = document.getElementById('currencySelect').value;
-  
-  if (amount > 0) {
-    alert(`Processing ${amount} ${currency} exchange...`);
-    // Add actual exchange logic here
-  }
-}
-
-// Initialize Countdown
-setInterval(updateCountdown, 1000);
+// Initialize
 updateCountdown();
+setInterval(updateCountdown, 60000); // Update every minute
