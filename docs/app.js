@@ -29,7 +29,8 @@ document.getElementById('connectBtn').addEventListener('click', async () => {
   if (window.ethereum) {
     try {
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      alert(`Connected: ${accounts[0].slice(0,6)}...${accounts[0].slice(-4)}`);
+      const walletDisplay = `${accounts[0].slice(0,6)}...${accounts[0].slice(-4)}`;
+      document.getElementById('walletAddress').textContent = walletDisplay;
     } catch (error) {
       console.error(error);
     }
@@ -38,6 +39,15 @@ document.getElementById('connectBtn').addEventListener('click', async () => {
   }
 });
 
+// Exchange Simulation
+document.querySelector('.exchange-btn').addEventListener('click', () => {
+  const amount = document.querySelector('.exchange-input').value;
+  const currency = document.querySelector('.exchange-select').value;
+  if (amount > 0) {
+    alert(`Processing exchange: ${amount} ${currency} → MZLx`);
+  }
+});
+
 // Initialize
 updateCountdown();
-setInterval(updateCountdown, 60000); // Update every minute
+setInterval(updateCountdown, 60000);
