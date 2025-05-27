@@ -14,14 +14,26 @@ body {
 .container {
   width: 100%;
   max-width: 500px;
+}
+
+/* Card Design */
+.card {
+  background: #1a365f;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.header-card {
   text-align: center;
+  background: linear-gradient(135deg, #1a365f, #0f2a4a);
 }
 
 /* Header */
-.header h1 {
+.header-card h1 {
   font-size: 2.5rem;
   margin: 0;
-  line-height: 1;
 }
 
 .subtitle {
@@ -32,7 +44,7 @@ body {
 
 /* Price Display */
 .price-display {
-  margin: 25px 0;
+  text-align: center;
 }
 
 .price-display h2 {
@@ -48,7 +60,7 @@ body {
 
 /* Countdown */
 .countdown-section {
-  margin: 30px 0;
+  text-align: center;
 }
 
 .countdown-section h3 {
@@ -62,20 +74,58 @@ body {
   font-weight: bold;
 }
 
-/* Button */
-#connectBtn {
+/* Exchange Section */
+.exchange-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exchange-select, .exchange-input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #2e5266;
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.exchange-btn {
   background: #00ff88;
   color: #0a192f;
   border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
   font-weight: bold;
-  margin-top: 20px;
   cursor: pointer;
-  transition: transform 0.2s;
 }
 
-#connectBtn:active {
-  transform: scale(0.95);
+/* Wallet Section */
+.connect-btn {
+  background: #00ff88;
+  color: #0a192f;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+}
+
+.wallet-address {
+  margin-top: 10px;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+    margin: 10px 0;
+  }
+  
+  .header-card h1 {
+    font-size: 2rem;
+  }
 }
