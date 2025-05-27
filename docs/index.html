@@ -2,39 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TruYan ICO Countdown</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan - MAZOL Ecosystem</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <!-- Centered Header -->
-    <header class="header">
+    <!-- Header Section -->
+    <header class="brand-header">
       <h1>TruYan</h1>
       <p class="subtitle">Social Media with Treasure by MAZOL</p>
     </header>
 
-    <!-- Countdown Section -->
+    <!-- ICO Countdown -->
     <div class="countdown-section">
-      <h2 class="countdown-title">DAYS TO LAUNCH: BUY</h2>
-      <div id="countdown" class="countdown-timer">
-        <div class="time-block">
+      <h2 class="countdown-title">COUNTDOWN TO LAUNCH: BUY NOW</h2>
+      <div id="countdownTimer" class="countdown-box">
+        <div class="time-segment">
           <span id="days">90</span>
-          <span>Days</span>
+          <label>DAYS</label>
         </div>
-        <div class="time-block">
+        <div class="time-segment">
           <span id="hours">00</span>
-          <span>Hours</span>
+          <label>HOURS</label>
         </div>
-        <div class="time-block">
+        <div class="time-segment">
           <span id="minutes">00</span>
-          <span>Minutes</span>
+          <label>MINUTES</label>
+        </div>
+        <div class="time-segment">
+          <span id="seconds">00</span>
+          <label>SECONDS</label>
         </div>
       </div>
     </div>
 
-    <!-- Wallet Connection -->
-    <button id="connectBtn" class="connect-btn">Connect Wallet</button>
+    <!-- Wallet Section -->
+    <section class="card">
+      <button id="connectWallet" class="action-btn">Connect Wallet</button>
+      <div id="walletAddress" class="wallet-address"></div>
+    </section>
+
+    <!-- Exchange Interface -->
+    <section class="card">
+      <div class="exchange-controls">
+        <select id="currencySelect" class="form-input">
+          <option>NGN</option>
+          <option>USD</option>
+          <option>USDT</option>
+        </select>
+        <input type="number" id="exchangeAmount" class="form-input" placeholder="Enter Amount">
+        <button class="action-btn" onclick="handleExchange()">Exchange Now</button>
+      </div>
+    </section>
   </div>
 
   <script src="app.js"></script>
