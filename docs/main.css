@@ -7,6 +7,7 @@
 }
 
 body {
+  background: var(--deep-blue);
   color: var(--pure-white);
   font-family: 'Segoe UI', sans-serif;
   display: flex;
@@ -23,13 +24,11 @@ body {
   overflow-y: auto;
 }
 
-/* Header Card */
+/* Header */
 .header-card {
   text-align: center;
-  background: linear-gradient(135deg, #1a365f, #0f2a4a);
   padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  background: linear-gradient(135deg, #1a365f, #0f2a4a);
 }
 
 .header-card h1 {
@@ -44,7 +43,16 @@ body {
   margin-top: 5px;
 }
 
-/* Price Card */
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Price Display */
 .price-display {
   text-align: center;
 }
@@ -60,7 +68,7 @@ body {
   font-weight: bold;
 }
 
-/* Countdown Card */
+/* Countdown */
 .countdown-section {
   text-align: center;
 }
@@ -77,7 +85,7 @@ body {
   font-weight: bold;
 }
 
-/* Exchange Card */
+/* Exchange */
 .exchange-section {
   display: flex;
   flex-direction: column;
@@ -102,7 +110,7 @@ body {
   cursor: pointer;
 }
 
-/* Wallet Card */
+/* Wallet */
 .wallet-options {
   display: flex;
   flex-direction: column;
@@ -111,20 +119,11 @@ body {
 
 .wallet-btn {
   background: rgba(0,255,136,0.1);
-  border: 1px solid #00ff88;
+  border: 1px solid var(--neon-green);
   color: white;
   padding: 12px;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   cursor: pointer;
-}
-
-.wallet-btn img {
-  width: 20px;
-  height: 20px;
 }
 
 .wallet-address {
@@ -132,75 +131,14 @@ body {
   font-family: monospace;
   word-break: break-all;
   font-size: 0.8rem;
+  text-align: center;
   color: #88aadd;
-  text-align: center;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #1a365f;
-  padding: 25px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 300px;
-  text-align: center;
-}
-
-.fingerprint {
-  margin: 20px 0;
-  padding: 20px;
-  border: 2px dashed #00ff88;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  cursor: pointer;
-}
-
-.fingerprint p {
-  margin-top: 10px;
-  font-size: 0.8rem;
-}
-
-.modal-close {
-  background: transparent;
-  border: 1px solid #ff5555;
-  color: #ff5555;
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin-top: 15px;
-  cursor: pointer;
 }
 
 /* Mobile Optimization */
 @media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-  
   .header-card h1 {
     font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 0.95rem;
   }
   
   .card {
