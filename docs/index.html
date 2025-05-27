@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TruYan ICO</title>
+  <link rel="stylesheet" href="main.css">
   <style>
-    /* NO-SCROLL LOCK */
+    /* Prevent scrolling */
     html, body {
       margin: 0;
       padding: 0;
@@ -13,10 +14,8 @@
       height: 100%;
       overflow: hidden;
       position: fixed;
-      background: #0a192f;
     }
   </style>
-  <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <div class="container">
@@ -64,29 +63,13 @@
     <div class="card">
       <div class="wallet-options">
         <button id="externalWalletBtn" class="wallet-btn">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTUgMTVIMThWMTJIMTVWMTVaTTkgMTJIMTJWMThIOSVWMTJaTTkgNkgxMlYxMUg5VjZaTTE1IDhIMThWMTFIMTVWOFoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="">
           Connect External Wallet
         </button>
         <button id="platformWalletBtn" class="wallet-btn">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJDNCAxNy41MiA4LjQ4IDIyIDE0IDIyQzE5LjUyIDIyIDI0IDE3LjUyIDI0IDEyQzI0IDYuNDggMTkuNTIgMiAxNCAyWiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" alt="">
           Use TruYan Wallet
         </button>
       </div>
       <div id="walletAddress" class="wallet-address"></div>
-    </div>
-  </div>
-
-  <!-- Platform Wallet Modal -->
-  <div id="walletModal" class="modal">
-    <div class="modal-content">
-      <h3>Secure Platform Wallet</h3>
-      <div class="fingerprint" id="fingerprintBtn">
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 8V6C5 3.79086 6.79086 2 9 2H15C17.2091 2 19 3.79086 19 6V8M5 8H19M5 8H3M19 8H21M7 8V16C7 17.1046 7.89543 18 9 18H15C16.1046 18 17 17.1046 17 16V8" stroke="#00FF88" stroke-width="2"/>
-        </svg>
-        <p>Tap to Authenticate</p>
-      </div>
-      <button class="modal-close" id="closeModal">Cancel</button>
     </div>
   </div>
 
