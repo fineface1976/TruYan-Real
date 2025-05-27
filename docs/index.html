@@ -1,16 +1,9 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TruYan ICO</title>
-  <style>
-  /* LOCK SCREEN HEIGHT - Add this right after <head> */
-  html, body, .container {
-    height: 100vh !important;
-    overflow: hidden !important;
-  }
-</style>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -32,28 +25,13 @@
     <!-- Countdown Card -->
     <div class="card">
       <div class="countdown-section">
-        <h3>COUNTDOWN TO LAUNCH: BUY</h3>
+        <h3>DAYS TO LAUNCH: BUY</h3>
         <div id="countdown">
           <span id="days">90</span>d 
           <span id="hours">00</span>h 
           <span id="minutes">00</span>m
         </div>
       </div>
-    </div>
-
-    <!-- Wallet Options Card -->
-    <div class="card">
-      <div class="wallet-options">
-        <button id="externalWalletBtn" class="wallet-btn">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTUgMTVIMThWMTJIMTVWMTVaTTkgMTJIMTJWMThIOSVWMTJaTTkgNkgxMlYxMUg5VjZaTTE1IDhIMThWMTFIMTVWOFoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="">
-          Connect External Wallet
-        </button>
-        <button id="platformWalletBtn" class="wallet-btn">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJDNCAxNy41MiA4LjQ4IDIyIDE0IDIyQzE5LjUyIDIyIDI0IDE3LjUyIDI0IDEyQzI0IDYuNDggMTkuNTIgMiAxNCAyWiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" alt="">
-          Use TruYan Wallet
-        </button>
-      </div>
-      <div id="walletAddress" class="wallet-address"></div>
     </div>
 
     <!-- Exchange Card -->
@@ -69,19 +47,11 @@
         <button class="exchange-btn">Swap</button>
       </div>
     </div>
-  </div>
 
-  <!-- Platform Wallet Modal -->
-  <div id="walletModal" class="modal">
-    <div class="modal-content">
-      <h3>Secure Platform Wallet</h3>
-      <div class="fingerprint" id="fingerprintBtn">
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 8V6C5 3.79086 6.79086 2 9 2H15C17.2091 2 19 3.79086 19 6V8M5 8H19M5 8H3M19 8H21M7 8V16C7 17.1046 7.89543 18 9 18H15C16.1046 18 17 17.1046 17 16V8" stroke="#00FF88" stroke-width="2"/>
-        </svg>
-        <p>Tap to Authenticate</p>
-      </div>
-      <button class="modal-close" id="closeModal">Cancel</button>
+    <!-- Wallet Card -->
+    <div class="card">
+      <button id="connectBtn" class="connect-btn">Connect Wallet</button>
+      <div id="walletAddress" class="wallet-address"></div>
     </div>
   </div>
 
