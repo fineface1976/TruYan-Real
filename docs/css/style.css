@@ -1,4 +1,4 @@
-/* Reset */
+ /* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,70 +7,89 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #0a192f;
+  background: #000;
   color: white;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.app-container {
+/* Video Frame (Top 70%) */
+.video-container {
+  height: 70vh;
   width: 100%;
-  max-width: 420px; /* Fits all devices */
+  position: relative;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom Sheet (30% - Draggable) */
+.bottom-sheet {
+  height: 30vh;
+  background: rgba(0, 0, 0, 0.9);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  overflow-y: auto;
 }
 
-.card {
-  background: #1a365f;
-  border-radius: 10px;
-  padding: 16px;
-  text-align: center;
+.handle {
+  width: 50px;
+  height: 5px;
+  background: #555;
+  border-radius: 5px;
+  margin: 0 auto 10px;
 }
 
-.header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 4px;
-}
-
-.subtitle {
-  color: #00ff88;
-  font-size: 0.9rem;
-}
-
-.btn {
-  background: #00ff88;
-  color: #0a192f;
-  border: none;
-  padding: 10px 0;
-  width: 100%;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 8px;
-  cursor: pointer;
-}
-
-.exchange-inputs {
+/* Button Grid */
+.button-row {
   display: flex;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
-input, select {
+.btn-small {
+  background: #00ff88;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
   flex: 1;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #00ff88;
-  background: #0a192f;
+  min-width: 80px;
+}
+
+.primary-btn {
+  background: #007bff;
   color: white;
 }
 
-#walletAddress {
+.vest-btn {
+  background: #ff6b00;
+  color: white;
+}
+
+.address-display {
+  font-size: 10px;
   font-family: monospace;
-  margin-top: 10px;
   word-break: break-all;
+  color: #00ff88;
+}
+
+.input-small, .select-small {
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #00ff88;
+  background: #111;
+  color: white;
+  flex: 1;
+}
+
+.hidden {
+  display: none;
 }
