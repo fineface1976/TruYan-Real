@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan - Social Media with Treasure</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>TruYan</h1>
+      <p>Social Media with Treasure by MAZOL</p>
+    </header>
+
+    <!-- ICO Countdown -->
+    <section class="countdown">
+      <h2>COUNTDOWN TO LAUNCH: BUY</h2>
+      <div id="timer">90d 00h 00m</div>
+    </section>
+
+    <!-- Token Price -->
+    <section class="price">
+      <span>MAZOL (MZLx)</span>
+      <span>$0.001</span>
+    </section>
+
+    <!-- Wallet Connection -->
+    <section class="wallet">
+      <button id="connectWallet">Connect Wallet</button>
+      <div id="walletAddress"></div>
+    </section>
+
+    <!-- Exchange -->
+    <section class="exchange">
+      <input type="number" placeholder="Amount">
+      <select>
+        <option>NGN</option>
+        <option>USD</option>
+        <option>USDT</option>
+      </select>
+      <button>Swap</button>
+    </section>
+  </div>
+
+  <script src="js/wallet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
