@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,40 +8,45 @@
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <header>
+    <!-- Header Card -->
+    <div class="card">
       <h1>TruYan</h1>
-      <p>Social Media with Treasure by MAZOL</p>
-    </header>
+      <p class="subtitle">Social Media with Treasure by MAZOL</p>
+    </div>
 
-    <!-- ICO Countdown -->
-    <section class="countdown">
+    <!-- Countdown Card -->
+    <div class="card">
       <h2>COUNTDOWN TO LAUNCH: BUY</h2>
       <div id="timer">90d 00h 00m</div>
-    </section>
+    </div>
 
-    <!-- Token Price -->
-    <section class="price">
-      <span>MAZOL (MZLx)</span>
-      <span>$0.001</span>
-    </section>
+    <!-- Price Card -->
+    <div class="card">
+      <div class="price-display">
+        <span>MAZOL (MZLx)</span>
+        <span>$0.001</span>
+      </div>
+    </div>
 
-    <!-- Wallet Connection -->
-    <section class="wallet">
-      <button id="connectWallet">Connect Wallet</button>
+    <!-- Wallet Card -->
+    <div class="card">
+      <button id="connectMetaMask" class="wallet-btn">Connect MetaMask</button>
+      <button id="connectTruYan" class="wallet-btn">Connect TruYan Wallet</button>
       <div id="walletAddress"></div>
-    </section>
+    </div>
 
-    <!-- Exchange -->
-    <section class="exchange">
-      <input type="number" placeholder="Amount">
-      <select>
-        <option>NGN</option>
-        <option>USD</option>
-        <option>USDT</option>
-      </select>
-      <button>Swap</button>
-    </section>
+    <!-- Exchange Card -->
+    <div class="card">
+      <div class="exchange">
+        <input type="number" placeholder="Amount">
+        <select>
+          <option>NGN</option>
+          <option>USD</option>
+          <option>USDT</option>
+        </select>
+        <button class="swap-btn">Swap</button>
+      </div>
+    </div>
   </div>
 
   <script src="js/wallet.js"></script>
