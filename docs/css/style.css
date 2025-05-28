@@ -1,4 +1,5 @@
- * {
+/* Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,64 +9,68 @@ body {
   font-family: Arial, sans-serif;
   background: #0a192f;
   color: white;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  overflow: hidden;
 }
 
-.container {
-  width: 95%;
-  max-width: 500px;
+.app-container {
+  width: 100%;
+  max-width: 420px; /* Fits all devices */
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .card {
   background: #1a365f;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
   text-align: center;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
+.header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
 }
 
 .subtitle {
-  font-size: 1rem;
   color: #00ff88;
+  font-size: 0.9rem;
 }
 
-.wallet-btn, .swap-btn {
+.btn {
   background: #00ff88;
   color: #0a192f;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin: 5px;
-  cursor: pointer;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 6px;
   font-weight: bold;
+  margin-top: 8px;
+  cursor: pointer;
 }
 
-#walletAddress {
-  margin-top: 10px;
-  font-family: monospace;
-}
-
-.exchange {
+.exchange-inputs {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 input, select {
+  flex: 1;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid #00ff88;
   background: #0a192f;
   color: white;
+}
+
+#walletAddress {
+  font-family: monospace;
+  margin-top: 10px;
+  word-break: break-all;
 }
