@@ -1,26 +1,26 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TruYan - Social Media with Treasure</title>
+  <title>TruYan</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Header Card -->
-    <div class="card">
+  <div class="app-container">
+    <!-- Header -->
+    <div class="card header">
       <h1>TruYan</h1>
       <p class="subtitle">Social Media with Treasure by MAZOL</p>
     </div>
 
-    <!-- Countdown Card -->
+    <!-- Countdown -->
     <div class="card">
       <h2>COUNTDOWN TO LAUNCH: BUY</h2>
       <div id="timer">90d 00h 00m</div>
     </div>
 
-    <!-- Price Card -->
+    <!-- Price Display -->
     <div class="card">
       <div class="price-display">
         <span>MAZOL (MZLx)</span>
@@ -28,33 +28,34 @@
       </div>
     </div>
 
-    <!-- Wallet Card -->
+    <!-- Wallets -->
     <div class="card">
-      <button id="connectMetaMask" class="wallet-btn">Connect MetaMask</button>
-      <button id="connectTruYan" class="wallet-btn">Connect TruYan Wallet</button>
+      <button id="connectMetaMask" class="btn">Connect MetaMask</button>
+      <button id="connectTruYan" class="btn">TruYan Wallet</button>
       <div id="walletAddress"></div>
     </div>
 
-    <!-- Exchange Card -->
-    <div class="card">
-      <div class="exchange">
-        <input type="number" placeholder="Amount">
-        <select>
+    <!-- Exchange -->
+    <div class="card exchange-card">
+      <div class="exchange-inputs">
+        <input type="number" id="swapAmount" placeholder="100">
+        <select id="currencySelect">
           <option>NGN</option>
-          <option>USD</option>
           <option>USDT</option>
+          <option>BNB</option>
         </select>
-        <button class="swap-btn">Swap</button>
       </div>
+      <button id="swapBtn" class="btn">Swap</button>
+    </div>
+
+    <!-- Flutterwave Payment -->
+    <div class="card">
+      <button id="flutterwaveBtn" class="btn payment-btn">Buy with Flutterwave</button>
     </div>
   </div>
 
+  <script src="js/flutterwave.js"></script>
+  <script src="js/swap.js"></script>
   <script src="js/wallet.js"></script>
-  <script src="js/app.js"></script>
 </body>
 </html>
-<div class="card">
-  <h2>Buy with Naira</h2>
-  <input type="number" id="nairaAmount" placeholder="Amount (NGN)">
-  <button id="buyWithNaira" class="wallet-btn">Pay via Flutterwave</button>
-</div>
