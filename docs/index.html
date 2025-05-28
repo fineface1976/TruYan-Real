@@ -1,61 +1,55 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TruYan</title>
+  <title>TruYan - Social Media with Treasure</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="app-container">
-    <!-- Header -->
-    <div class="card header">
-      <h1>TruYan</h1>
-      <p class="subtitle">Social Media with Treasure by MAZOL</p>
+  <!-- Video Frame (Top 70%) -->
+  <div class="video-container">
+    <video autoplay loop muted>
+      <source src="assets/sample-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Bottom Sheet (30%) -->
+  <div class="bottom-sheet">
+    <div class="handle"></div>
+    
+    <!-- Wallet Section -->
+    <div class="button-row">
+      <button id="connectMetaMask" class="btn-small">MetaMask</button>
+      <button id="connectTruYan" class="btn-small">TruYan Wallet</button>
+      <div id="walletAddress" class="address-display"></div>
     </div>
 
-    <!-- Countdown -->
-    <div class="card">
-      <h2>COUNTDOWN TO LAUNCH: BUY</h2>
-      <div id="timer">90d 00h 00m</div>
+    <!-- ICO Countdown (Auto-hides later) -->
+    <div id="icoTimer" class="button-row">
+      <div class="countdown">ICO: <span id="timer">90d 00h 00m</span></div>
+      <button class="btn-small buy-btn">Buy MZLx</button>
     </div>
 
-    <!-- Price Display -->
-    <div class="card">
-      <div class="price-display">
-        <span>MAZOL (MZLx)</span>
-        <span>$0.001</span>
-      </div>
+    <!-- Investment Buttons (Post-ICO) -->
+    <div id="investSection" class="button-row hidden">
+      <button class="btn-small vest-btn">30-Day (+10%)</button>
+      <button class="btn-small vest-btn">60-Day (+25%)</button>
+      <button class="btn-small vest-btn">365-Day (+40%)</button>
     </div>
 
-    <!-- Wallets -->
-    <div class="card">
-      <button id="connectMetaMask" class="btn">Connect MetaMask</button>
-      <button id="connectTruYan" class="btn">TruYan Wallet</button>
-      <div id="walletAddress"></div>
-    </div>
-
-    <!-- Exchange -->
-    <div class="card exchange-card">
-      <div class="exchange-inputs">
-        <input type="number" id="swapAmount" placeholder="100">
-        <select id="currencySelect">
-          <option>NGN</option>
-          <option>USDT</option>
-          <option>BNB</option>
-        </select>
-      </div>
-      <button id="swapBtn" class="btn">Swap</button>
-    </div>
-
-    <!-- Flutterwave Payment -->
-    <div class="card">
-      <button id="flutterwaveBtn" class="btn payment-btn">Buy with Flutterwave</button>
+    <!-- Swap/Flutterwave -->
+    <div class="button-row">
+      <input type="number" placeholder="Amount" class="input-small">
+      <select class="select-small">
+        <option>NGN</option>
+        <option>USDT</option>
+      </select>
+      <button class="btn-small primary-btn">Swap</button>
     </div>
   </div>
 
-  <script src="js/flutterwave.js"></script>
-  <script src="js/swap.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/wallet.js"></script>
 </body>
 </html>
