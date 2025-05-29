@@ -1,4 +1,4 @@
-class MLMTracker {
+ class MLMTracker {
   constructor() {
     this.referrals = {}; // { referrer: [referred1, referred2] }
   }
