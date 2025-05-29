@@ -1,4 +1,4 @@
-/* ===== RESET & BASE ===== */
+ /* ===== RESET & BASE ===== */
 * {
   margin: 0;
   padding: 0;
@@ -33,15 +33,14 @@ video {
   padding: 12px 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  position: relative;
+  gap: 8px;
 }
 
-/* ===== BUTTON STYLES ===== */
+/* ===== MEMBERSHIP BUTTONS ===== */
 .button-row {
   display: flex;
-  gap: 8px;
-  height: 22%;
+  gap: 6px;
+  height: 18%;
 }
 
 .membership-btn {
@@ -49,75 +48,87 @@ video {
   background: #0a192f;
   color: #00ff88;
   border: 1px solid #00ff88;
-  border-radius: 8px;
-  font-size: 12px;
-  padding: 8px 4px;
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 6px 2px;
 }
 
-.action-btn, .buy-btn, .save-btn {
-  flex: 1;
-  background: #00ff88;
-  color: #0a192f;
-  border: none;
-  border-radius: 8px;
+/* ===== FULL-WIDTH COUNTDOWN ===== */
+.countdown-fullwidth {
+  height: 18%;
+  background: #0a192f;
+  border: 1px solid #00ff88;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.countdown-header {
+  font-size: 12px;
+  color: #00ff88;
+}
+
+.countdown-timer {
   font-weight: bold;
   font-size: 14px;
 }
 
-/* ===== COUNTDOWN BOX ===== */
-.countdown-box {
-  flex: 1;
+.buy-btn {
+  background: #00ff88;
+  color: #0a192f;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: bold;
+}
+
+/* ===== FULL-WIDTH MINING STATS ===== */
+.mining-fullwidth {
+  height: 18%;
   background: #0a192f;
   border: 1px solid #00ff88;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  padding: 0 10px;
+}
+
+.mining-stat {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.countdown-box div:first-child {
-  font-size: 10px;
-  margin-bottom: 4px;
-}
-
-#countdown {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-/* ===== MINING BOX ===== */
-.mining-box {
-  flex: 1;
-  background: #0a192f;
-  border: 1px solid #00ff88;
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 12px;
-}
-
-.mining-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-
 .mining-label {
+  font-size: 10px;
   color: #00ff88;
 }
 
 .mining-value {
   font-family: monospace;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
-/* ===== SAVE ROW ===== */
-.save-row {
+/* ===== ACTION BUTTONS ===== */
+.action-row {
+  height: 18%;
+  display: flex;
+  gap: 8px;
   margin-top: auto;
 }
 
-.save-btn {
-  height: 100%;
+.action-btn {
+  flex: 1;
+  background: #00ff88;
+  color: #0a192f;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* ===== MODAL ===== */
