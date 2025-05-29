@@ -1,15 +1,12 @@
- function showWalletModal() {
-  const modal = `
-    <div class="wallet-modal">
-      <h3>Connect Wallet</h3>
-      <button onclick="connectMetaMask()">MetaMask</button>
-      <button onclick="connectTruYan()">TruYan Wallet</button>
-    </div>
-  `;
-  document.body.insertAdjacentHTML('beforeend', modal);
-}
+ // Wallet Connection
+document.getElementById('connectWallet').addEventListener('click', () => {
+  document.getElementById('walletModal').style.display = 'flex';
+});
 
-// Update existing wallet buttons
-document.querySelectorAll('.wallet-btn').forEach(btn => {
-  btn.addEventListener('click', showWalletModal);
+document.querySelectorAll('.wallet-option').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const walletType = e.target.dataset.wallet;
+    document.getElementById('walletModal').style.display = 'none';
+    alert(`Connecting to ${walletType}...`);
+  });
 });
