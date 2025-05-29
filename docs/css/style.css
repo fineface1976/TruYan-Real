@@ -13,11 +13,34 @@ body {
   overflow: hidden;
 }
 
+/* ===== HEADER ===== */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #00ff88;
+  text-shadow: 0 0 5px rgba(0,255,136,0.5);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: white;
+}
+
 /* ===== VIDEO FRAME (70%) ===== */
 .video-container {
   height: 70vh;
   width: 100%;
   background: #000;
+  position: relative;
 }
 
 video {
@@ -84,9 +107,27 @@ video {
   font-weight: bold;
 }
 
-/* ===== FULL-WIDTH MINING STATS ===== */
-.mining-fullwidth {
+/* ===== MINING SECTION ===== */
+.mining-container {
   height: 18%;
+  display: flex;
+  gap: 8px;
+}
+
+.mining-btn {
+  flex: 1;
+  background: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mining-stats {
+  flex: 2;
   background: #0a192f;
   border: 1px solid #00ff88;
   border-radius: 6px;
