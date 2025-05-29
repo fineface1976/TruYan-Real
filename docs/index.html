@@ -5,13 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TruYan - Social Media with Treasure</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Emergency inline fixes (backup) */
-    body {
-      overflow: hidden !important;
-      background: #0a192f !important;
-    }
-  </style>
 </head>
 <body>
   <!-- Video Frame (Top 70%) -->
@@ -72,10 +65,10 @@
     <div class="modal-content">
       <h3>Connect Wallet</h3>
       <button class="wallet-option" data-wallet="metamask">
-        <img src="assets/metamask-icon.png" alt=""> MetaMask
+        <img src="assets/metamask-icon.png" width="20" alt=""> MetaMask
       </button>
       <button class="wallet-option" data-wallet="truyan">
-        <img src="assets/truyan-icon.png" alt=""> TruYan Wallet
+        <img src="assets/truyan-icon.png" width="20" alt=""> TruYan Wallet
       </button>
     </div>
   </div>
@@ -83,28 +76,5 @@
   <!-- Scripts -->
   <script src="js/wallet.js"></script>
   <script src="js/mining.js"></script>
-  <script>
-    // Membership Popups (Emergency Fallback)
-    document.querySelectorAll('.membership-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tier = btn.getAttribute('data-tier');
-        const messages = {
-          free: "FREE MEMBER\n• Email registration\n• Mine 5 MZLx/day\n• No voting",
-          early: "EARLY MEMBER\n• Buy MZLx tokens\n• Mine 10 MZLx/day\n• Voting rights",
-          power: "POWER MEMBER\n• ₦5,000 membership\n• Mine 20 MZLx/day\n• Veto power",
-          star: "STAR MEMBER\n• $50 token purchase\n• Mine 40 MZLx/day\n• Price control"
-        };
-        alert(messages[tier]);
-      });
-    });
-
-    // Force 30% panel height
-    function resizePanel() {
-      const panel = document.querySelector('.bottom-sheet');
-      panel.style.height = `${window.innerHeight * 0.3}px`;
-    }
-    window.addEventListener('resize', resizePanel);
-    resizePanel();
-  </script>
 </body>
 </html>
