@@ -1,43 +1,69 @@
-<!-- Replace the existing bottom-sheet div with this: -->
-<div class="bottom-sheet">
-  <div class="handle"></div>
-  
-  <!-- Swap Section -->
-  <div class="swap-container">
-    <div class="swap-input">
-      <input type="number" placeholder="0.0" id="fromAmount">
-      <div class="token-select">
-        <span>MZLx</span>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Video Frame (Top 70%) -->
+  <div class="video-container">
+    <video autoplay loop muted>
+      <source src="assets/sample-video.mp4" type="video/mp4">
+      Your browser doesn't support HTML5 video.
+    </video>
+  </div>
+
+  <!-- Transaction Panel (Bottom 30%) -->
+  <div class="bottom-sheet">
+    <div class="handle"></div>
+    
+    <!-- Wallet Connection -->
+    <div class="wallet-row">
+      <button id="connectMetaMask" class="wallet-btn">MetaMask</button>
+      <button id="connectTruYan" class="wallet-btn">TruYan Wallet</button>
+      <div id="walletAddress" class="wallet-address"></div>
+    </div>
+
+    <!-- Swap Interface -->
+    <div class="swap-container">
+      <div class="swap-input">
+        <input type="number" id="fromAmount" placeholder="0.0">
+        <div class="token-label">MZLx</div>
       </div>
+      <div class="swap-arrow">↓</div>
+      <div class="swap-input">
+        <input type="number" id="toAmount" placeholder="0.0">
+        <select id="toToken">
+          <option>USDT</option>
+          <option>BNB</option>
+          <option>NGN</option>
+        </select>
+      </div>
+      <button id="swapBtn" class="action-btn">Swap</button>
     </div>
-    <div class="swap-arrow">↓</div>
-    <div class="swap-input">
-      <input type="number" placeholder="0.0" id="toAmount">
-      <select id="toToken">
-        <option>USDT</option>
-        <option>BNB</option>
-        <option>NGN</option>
-      </select>
+
+    <!-- Action Buttons -->
+    <div class="action-row">
+      <button class="action-btn" id="buyBtn">Buy</button>
+      <button class="action-btn" id="sellBtn">Sell</button>
+      <button class="action-btn" id="receiveBtn">Receive</button>
+      <button class="action-btn" id="withdrawBtn">Withdraw</button>
     </div>
-    <button id="swapBtn" class="btn-primary">Swap</button>
+
+    <!-- Mining & Invest -->
+    <div class="utility-row">
+      <button id="miningToggle" class="mining-btn">
+        ⛏️ <span id="miningStatus">Mining: ON</span>
+      </button>
+      <button id="specialInvestBtn" class="invest-btn">
+        Special Invest
+      </button>
+    </div>
   </div>
 
-  <!-- Action Buttons -->
-  <div class="action-buttons">
-    <button class="btn-compact" id="buyBtn">Buy</button>
-    <button class="btn-compact" id="sellBtn">Sell</button>
-    <button class="btn-compact" id="receiveBtn">Receive</button>
-    <button class="btn-compact" id="withdrawBtn">Withdraw</button>
-  </div>
-
-  <!-- Mining & Invest -->
-  <div class="utility-buttons">
-    <button id="miningToggle" class="btn-toggle">
-      <span class="toggle-icon">⛏️</span>
-      <span id="miningStatus">Mining: ON</span>
-    </button>
-    <button id="specialInvestBtn" class="btn-invest">
-      Special Invest (Bank/Flutterwave)
-    </button>
-  </div>
-</div>
+  <script src="js/wallet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
