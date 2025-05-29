@@ -1,14 +1,9 @@
-// Real-time counter formatting
-function updateMiningDisplay() {
-  const elements = {
-    miningSpeed: (0.005).toFixed(3),
-    minedToday: (12.5).toFixed(1),
-    minedTotal: (1240).toLocaleString()
-  };
-
-  Object.entries(elements).forEach(([id, value]) => {
-    document.getElementById(id).textContent = `${value} MZLx`;
-  });
+ // Mining Counter
+function updateMining() {
+  document.getElementById('miningSpeed').textContent = '0.005 MZLx/ms';
+  document.getElementById('minedToday').textContent = '12.5 MZLx';
+  document.getElementById('minedTotal').textContent = '1,240 MZLx';
 }
 
-setInterval(updateMiningDisplay, 100)
+setInterval(updateMining, 100);
+updateMining();
