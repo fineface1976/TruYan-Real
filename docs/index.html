@@ -17,7 +17,7 @@
 
   <!-- Transaction Panel (30%) -->
   <div class="bottom-sheet">
-    <!-- Row 1: Membership -->
+    <!-- Row 1: Membership Buttons -->
     <div class="button-row">
       <button class="membership-btn" data-tier="free">Free Member</button>
       <button class="membership-btn" data-tier="early">Early Member</button>
@@ -25,38 +25,34 @@
       <button class="membership-btn" data-tier="star">Star Member</button>
     </div>
 
-    <!-- Row 2: Wallet & Countdown -->
-    <div class="button-row">
+    <!-- Row 2: Private Sale Countdown -->
+    <div class="countdown-fullwidth">
+      <div class="countdown-header">Private Sale Only:</div>
+      <div class="countdown-timer">120d 00h 00m</div>
+      <button class="buy-btn">Buy</button>
+    </div>
+
+    <!-- Row 3: Mining Stats -->
+    <div class="mining-fullwidth">
+      <div class="mining-stat">
+        <div class="mining-label">Speed:</div>
+        <div class="mining-value" id="miningSpeed">0.005 MZLx/ms</div>
+      </div>
+      <div class="mining-stat">
+        <div class="mining-label">Today:</div>
+        <div class="mining-value" id="minedToday">12.5 MZLx</div>
+      </div>
+      <div class="mining-stat">
+        <div class="mining-label">Total:</div>
+        <div class="mining-value" id="minedTotal">1,240 MZLx</div>
+      </div>
+    </div>
+
+    <!-- Row 4: Action Buttons -->
+    <div class="action-row">
       <button id="connectWallet" class="action-btn">Link Wallet</button>
-      <div class="countdown-box">
-        <div>Private Sale Only:</div>
-        <div id="countdown">120d 00h 00m</div>
-        <button id="buyBtn" class="buy-btn">Buy</button>
-      </div>
-    </div>
-
-    <!-- Row 3: Swap & Mining -->
-    <div class="button-row">
       <button id="swapBtn" class="action-btn">Swap</button>
-      <div class="mining-box">
-        <div class="mining-row">
-          <span class="mining-label">Speed:</span>
-          <span id="miningSpeed" class="mining-value">0.005 MZLx/ms</span>
-        </div>
-        <div class="mining-row">
-          <span class="mining-label">Today:</span>
-          <span id="minedToday" class="mining-value">12.5 MZLx</span>
-        </div>
-        <div class="mining-row">
-          <span class="mining-label">Total:</span>
-          <span id="minedTotal" class="mining-value">1,240 MZLx</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 4: Save & Earn -->
-    <div class="button-row save-row">
-      <button id="saveBtn" class="save-btn">Save & Earn (15% APR)</button>
+      <button id="saveBtn" class="action-btn">Save & Earn (15%)</button>
     </div>
   </div>
 
@@ -71,16 +67,5 @@
 
   <script src="js/wallet.js"></script>
   <script src="js/mining.js"></script>
-  <script>
-    // Ensure proper 70/30 split on resize
-    function adjustHeights() {
-      const vh = window.innerHeight;
-      document.querySelector('.video-container').style.height = `${vh * 0.7}px`;
-      document.querySelector('.bottom-sheet').style.height = `${vh * 0.3}px`;
-    }
-    
-    window.addEventListener('resize', adjustHeights);
-    adjustHeights();
-  </script>
 </body>
 </html>
