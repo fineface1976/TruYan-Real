@@ -9,6 +9,11 @@
 <body>
   <!-- Video Frame (70%) -->
   <div class="video-container">
+    <!-- Restored Title Header -->
+    <div class="header">
+      <h1>TruYan</h1>
+      <p class="subtitle">Social Media with Treasure by MAZOL</p>
+    </div>
     <video autoplay loop muted playsinline>
       <source src="assets/sample-video.mp4" type="video/mp4">
       Your browser doesn't support HTML5 video.
@@ -32,19 +37,24 @@
       <button class="buy-btn">Buy</button>
     </div>
 
-    <!-- Row 3: Mining Stats -->
-    <div class="mining-fullwidth">
-      <div class="mining-stat">
-        <div class="mining-label">Speed:</div>
-        <div class="mining-value" id="miningSpeed">0.005 MZLx/ms</div>
-      </div>
-      <div class="mining-stat">
-        <div class="mining-label">Today:</div>
-        <div class="mining-value" id="minedToday">12.5 MZLx</div>
-      </div>
-      <div class="mining-stat">
-        <div class="mining-label">Total:</div>
-        <div class="mining-value" id="minedTotal">1,240 MZLx</div>
+    <!-- Row 3: Mining Section -->
+    <div class="mining-container">
+      <button id="miningToggle" class="mining-btn">
+        <span id="miningStatus">MINE MAZOL: OFF</span>
+      </button>
+      <div class="mining-stats">
+        <div class="mining-stat">
+          <div class="mining-label">Speed:</div>
+          <div class="mining-value" id="miningSpeed">0.000 MZLx/ms</div>
+        </div>
+        <div class="mining-stat">
+          <div class="mining-label">Session:</div>
+          <div class="mining-value" id="miningTimer">24:00:00</div>
+        </div>
+        <div class="mining-stat">
+          <div class="mining-label">Total:</div>
+          <div class="mining-value" id="minedTotal">0 MZLx</div>
+        </div>
       </div>
     </div>
 
