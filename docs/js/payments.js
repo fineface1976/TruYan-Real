@@ -1,4 +1,4 @@
-// Initialize Flutterwave
+ // Initialize Flutterwave
 function initFlutterwave() {
   return new Promise((resolve) => {
     const script = document.createElement('script');
