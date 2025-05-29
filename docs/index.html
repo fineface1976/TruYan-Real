@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TruYan</title>
+  <title>TruYan - Social Media with Treasure</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,60 +11,54 @@
   <div class="video-container">
     <video autoplay loop muted>
       <source src="assets/sample-video.mp4" type="video/mp4">
-      Your browser doesn't support HTML5 video.
     </video>
   </div>
 
   <!-- Transaction Panel (Bottom 30%) -->
   <div class="bottom-sheet">
-    <div class="handle"></div>
-    
-    <!-- Wallet Connection -->
-    <div class="wallet-row">
-      <button id="connectMetaMask" class="wallet-btn">MetaMask</button>
-      <button id="connectTruYan" class="wallet-btn">TruYan Wallet</button>
-      <div id="walletAddress" class="wallet-address"></div>
+    <!-- Membership Buttons -->
+    <div class="button-row">
+      <button class="membership-btn" data-tier="free">Free Member</button>
+      <button class="membership-btn" data-tier="early">Early Member</button>
+      <button class="membership-btn" data-tier="power">Power Member</button>
+      <button class="membership-btn" data-tier="star">Star Member</button>
     </div>
 
-    <!-- Swap Interface -->
-    <div class="swap-container">
-      <div class="swap-input">
-        <input type="number" id="fromAmount" placeholder="0.0">
-        <div class="token-label">MZLx</div>
+    <!-- Wallet & Private Sale -->
+    <div class="button-row">
+      <button id="connectWallet" class="action-btn">Link Wallet</button>
+      <div class="countdown-box">
+        <span>Private Sale Only: </span>
+        <span id="countdown">120d 00h 00m</span>
+        <button id="buyBtn" class="buy-btn">Buy</button>
       </div>
-      <div class="swap-arrow">↓</div>
-      <div class="swap-input">
-        <input type="number" id="toAmount" placeholder="0.0">
-        <select id="toToken">
-          <option>USDT</option>
-          <option>BNB</option>
-          <option>NGN</option>
-        </select>
-      </div>
+    </div>
+
+    <!-- Swap & Mining -->
+    <div class="button-row">
       <button id="swapBtn" class="action-btn">Swap</button>
+      <div class="mining-box">
+        <div>Speed: <span id="miningSpeed">0.005 MZLx/ms</span></div>
+        <div>Today: <span id="minedToday">12.5 MZLx</span></div>
+        <div>Total: <span id="minedTotal">1,240 MZLx</span></div>
+      </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="action-row">
-      <button class="action-btn" id="buyBtn">Buy</button>
-      <button class="action-btn" id="sellBtn">Sell</button>
-      <button class="action-btn" id="receiveBtn">Receive</button>
-      <button class="action-btn" id="withdrawBtn">Withdraw</button>
-    </div>
-
-    <!-- Mining & Invest -->
-    <div class="utility-row">
-      <button id="miningToggle" class="mining-btn">
-        ⛏️ <span id="miningStatus">Mining: ON</span>
-      </button>
-      <button id="specialInvestBtn" class="invest-btn">
-        Special Invest
-      </button>
+    <!-- Save & Earn -->
+    <div class="button-row">
+      <button id="saveBtn" class="action-btn">Save & Earn (15% APR)</button>
     </div>
   </div>
 
+  <!-- Modals (Hidden by default) -->
+  <div id="walletModal" class="modal">
+    <h3>Connect Wallet</h3>
+    <button class="wallet-option" data-wallet="metamask">MetaMask</button>
+    <button class="wallet-option" data-wallet="truyan">TruYan Wallet</button>
+  </div>
+
   <script src="js/wallet.js"></script>
+  <script src="js/mining.js"></script>
   <script src="js/app.js"></script>
 </body>
-</html>
-
+ </html>
