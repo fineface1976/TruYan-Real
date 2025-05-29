@@ -1,28 +1,33 @@
-// Auto-hide ICO timer post-countdown
-const icoEndDate = new Date();
-icoEndDate.setDate(icoEndDate.getDate() + 90);
+ // Initialize Mining Toggle
+document.getElementById('miningToggle').addEventListener('click', () => {
+  const status = document.getElementById('miningStatus');
+  status.textContent = status.textContent.includes("ON") 
+    ? "Mining: OFF" 
+    : "Mining: ON";
+});
 
-function checkICOStatus() {
-  if (Date.now() > icoEndDate) {
-    document.getElementById('icoTimer').classList.add('hidden');
-    document.getElementById('investSection').classList.remove('hidden');
+// Swap Functionality
+document.getElementById('swapBtn').addEventListener('click', () => {
+  const fromAmount = document.getElementById('fromAmount').value;
+  const toToken = document.getElementById('toToken').value;
+  
+  if (!fromAmount || isNaN(fromAmount)) {
+    alert("Enter a valid amount");
+    return;
   }
-}
+  
+  // Mock swap (replace with actual contract call)
+  const rate = toToken === "NGN" ? 1000 : 500; // Example rates
+  document.getElementById('toAmount').value = (fromAmount * rate).toFixed(2);
+  alert(`Swapped ${fromAmount} MZLx to ${toToken}`);
+});
 
-// Update timer every minute
-function updateTimer() {
-  const diff = icoEndDate - Date.now();
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  document.getElementById('timer').textContent = `${days}d ${hours}h ${mins}m`;
-}
-
-setInterval(() => {
-  updateTimer();
-  checkICOStatus();
-}, 60000);
-
-// Initialize
-updateTimer();
-checkICOStatus();
+// Special Invest Modal
+document.getElementById('specialInvestBtn').addEventListener('click', () => {
+  const options = confirm("Choose investment method:\nOK for Bank Deposit\nCancel for Flutterwave");
+  if (options) {
+    alert("Bank deposit form will open here");
+  } else {
+    alert("Flutterwave payment will launch here");
+  }
+});
