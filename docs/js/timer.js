@@ -1,4 +1,4 @@
-// Set ICO End Date (90 days from now)
+ // Set ICO End Date (90 days from now)
 const icoEndDate = new Date();
 icoEndDate.setDate(icoEndDate.getDate() + 90);
 
