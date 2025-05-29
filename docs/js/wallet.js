@@ -1,15 +1,15 @@
- // MetaMask Connection
-document.getElementById("connectMetaMask").addEventListener("click", async () => {
-  if (window.ethereum) {
-    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-    const shortAddress = `${accounts[0].slice(0, 6)}...${accounts[0].slice(-4)}`;
-    document.getElementById("walletAddress").textContent = shortAddress;
-  } else {
-    alert("Please install MetaMask!");
-  }
-});
+ function showWalletModal() {
+  const modal = `
+    <div class="wallet-modal">
+      <h3>Connect Wallet</h3>
+      <button onclick="connectMetaMask()">MetaMask</button>
+      <button onclick="connectTruYan()">TruYan Wallet</button>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', modal);
+}
 
-// TruYan Wallet Connection (Mock)
-document.getElementById("connectTruYan").addEventListener("click", () => {
-  document.getElementById("walletAddress").textContent = "TruYan Wallet Connected";
+// Update existing wallet buttons
+document.querySelectorAll('.wallet-btn').forEach(btn => {
+  btn.addEventListener('click', showWalletModal);
 });
