@@ -1,90 +1,43 @@
- /* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #0a192f;
-  color: white;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Video Frame */
-.video-container {
-  height: 70vh;
-  width: 100%;
-  background: #000;
-}
-
-/* Bottom Sheet */
+ /* ===== CRITICAL UPDATES ===== */
 .bottom-sheet {
   height: 30vh;
-  background: #1a365f;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 15px;
+  gap: 12px; /* Increased gap */
+  overflow: hidden; /* Prevents cutoff */
 }
 
-/* Button Layouts */
-.button-row {
-  display: flex;
-  gap: 8px;
-  height: 25%;
-}
-
-.membership-btn, .action-btn {
-  flex: 1;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-  font-weight: bold;
-}
-
-.membership-btn {
-  background: #333;
-  color: #00ff88;
-}
-
-.action-btn {
-  background: #00ff88;
-  color: #0a192f;
-}
-
+/* Border Sections */
 .countdown-box, .mining-box {
-  flex: 1;
-  background: #0a192f;
-  border-radius: 8px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Modals */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #1a365f;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 100;
-  display: none;
-}
-
-.wallet-option {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
+  border: 2px solid #00ff88; /* Added borders */
   padding: 10px;
-  background: #00ff88;
-  color: #0a192f;
-  border: none;
-  border-radius: 5px;
+}
+
+/* Button Row Fixes */
+.button-row {
+  min-height: 22%; /* Prevents squeezing */
+  align-items: center;
+}
+
+/* Save & Earn Positioning */
+#saveBtn {
+  margin-top: auto; /* Pushes to top of remaining space */
+  height: 80%; /* Fits container */
+}
+
+/* Mining Counter Layout */
+.mining-box div {
+  margin: 4px 0;
+  white-space: nowrap; /* Prevents text wrap */
+}
+
+/* Modal Backdrop */
+.modal::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 99;
 }
