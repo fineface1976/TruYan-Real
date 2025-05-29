@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <style>
+    body { background: #0a192f; color: white; }
+    .param-row { display: flex; margin: 10px 0; }
+    input { margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Admin Settings</h1>
+  
+  <!-- Mining Rates -->
+  <div class="param-row">
+    <label>Free Member Mining:</label>
+    <input type="number" id="freeMining" value="5"> MZLx/day
+  </div>
+
+  <!-- Membership Prices -->
+  <div class="param-row">
+    <label>Power Member Price:</label>
+    <input type="number" id="powerPrice" value="5000"> NGN
+  </div>
+
+  <button id="saveSettings">Save Changes</button>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
