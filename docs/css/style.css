@@ -1,43 +1,155 @@
- /* ===== CRITICAL UPDATES ===== */
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0a192f;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== VIDEO FRAME (70%) ===== */
+.video-container {
+  height: 70vh;
+  width: 100%;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== TRANSACTION PANEL (30%) ===== */
 .bottom-sheet {
   height: 30vh;
-  padding: 15px;
-  gap: 12px; /* Increased gap */
-  overflow: hidden; /* Prevents cutoff */
+  background: #1a365f;
+  padding: 12px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
 }
 
-/* Border Sections */
-.countdown-box, .mining-box {
-  border: 2px solid #00ff88; /* Added borders */
-  padding: 10px;
-}
-
-/* Button Row Fixes */
+/* ===== BUTTON STYLES ===== */
 .button-row {
-  min-height: 22%; /* Prevents squeezing */
+  display: flex;
+  gap: 8px;
+  height: 22%;
+}
+
+.membership-btn {
+  flex: 1;
+  background: #0a192f;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 8px 4px;
+}
+
+.action-btn, .buy-btn, .save-btn {
+  flex: 1;
+  background: #00ff88;
+  color: #0a192f;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ===== COUNTDOWN BOX ===== */
+.countdown-box {
+  flex: 1;
+  background: #0a192f;
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-/* Save & Earn Positioning */
-#saveBtn {
-  margin-top: auto; /* Pushes to top of remaining space */
-  height: 80%; /* Fits container */
+.countdown-box div:first-child {
+  font-size: 10px;
+  margin-bottom: 4px;
 }
 
-/* Mining Counter Layout */
-.mining-box div {
-  margin: 4px 0;
-  white-space: nowrap; /* Prevents text wrap */
+#countdown {
+  font-weight: bold;
+  font-size: 14px;
 }
 
-/* Modal Backdrop */
-.modal::before {
-  content: "";
+/* ===== MINING BOX ===== */
+.mining-box {
+  flex: 1;
+  background: #0a192f;
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.mining-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.mining-label {
+  color: #00ff88;
+}
+
+.mining-value {
+  font-family: monospace;
+}
+
+/* ===== SAVE ROW ===== */
+.save-row {
+  margin-top: auto;
+}
+
+.save-btn {
+  height: 100%;
+}
+
+/* ===== MODAL ===== */
+.modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 99;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #1a365f;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.wallet-option {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #00ff88;
+  color: #0a192f;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
