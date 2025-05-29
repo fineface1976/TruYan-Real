@@ -1,10 +1,33 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TruYan - Social Media with Treasure</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Embedded Wallet Icons (Base64) */
+    .wallet-icon {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    
+    /* MetaMask Icon */
+    .metamask-icon {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AkEEjIXF6sK+QAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABYklEQVRIie2UMUoDQRSGv5lNQKxSWFhYWNjY2PgAPoKPYGkh2Fj5BD6BpY1gY2Eh2FhYCGKRRVEhG8hmd2bGYrNJdnc2u4lFwQ8GZuZ+8/0z8w8z8J9HqVQqA1XgFNgC3oBn4LaqqmffA0ql0gCugetf5K7AeVVVz74GlMvlLeAGOPtD7gK4q6rqydeAUql0BFwBx3/IXQB3VVU9+RpQKpX2gXvg8A+5C+C+qqonXwNKpdIucAfs/yF3ATxUVfXoa0CxWNwBboGdP+QugMeqqh58DSgUCtvANbD1h9wF8FRV1aOvAfl8fgu4Ajb/kLsAnquqevA1IJfLbQKXwMYfchfAS1VVD74G5HK5DeACWP9D7gJ4rarq3teAbDa7DpwDa3/IXQBvVVXd+RqQyWTWgDNg9Q+5C+C9qqpbXwPS6fQqcAqs/CF3AXxUVXXja0AqlVoBToDlP+QugM+qqm58DUgmk8vAMbD0h9wF8FVV1bWvAYlEYgk4Ahb/kLsAvququvI1IB6PLwKHwMIfchfAT1VVl74GxGKxBeAAmP9D7gIYqKrq0teAaDQ6D+wDc3/IXQDDqqoufA2IRCJzwB4w+4fcBTCqqup/AP8Ae9jR3Wq1j3MAAAAASUVORK5CYII=') no-repeat;
+      background-size: contain;
+      display: inline-block;
+    }
+    
+    /* TruYan Wallet Icon */
+    .truyan-icon {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AkEEjQZP0sKpwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABJklEQVRIie3UMUoDQRTG8Z8psLCwsLCw8QF8BB/B0kKwsfIJfAJLG8HGwkKwsbAQxCKLoEI2kM3uzFhssptJNhtFPPjDwMz7/t/MmzdD8J9HqVQqA1XgFNgC3oBn4LaqqmffA0ql0gCugetf5K7AeVVVz74GlMvlLeAGOPtD7gK4q6rqydeAUql0BFwBx3/IXQB3VVU9+RpQKpX2gXvg8A+5C+C+qqonXwNKpdIucAfs/yF3ATxUVfXoa0CxWNwBboGdP+QugMeqqh58DSgUCtvANbD1h9wF8FRV1aOvAfl8fgu4Ajb/kLsAnquqevA1IJfLbQKXwMYfchfAS1VVD74G5HK5DeACWP9D7gJ4rarq3teAbDa7DpwDa3/IXQBvVVXd+RqQyWTWgDNg9Q+5C+C9qqpbXwPS6fQqcAqs/CF3AXxUVXXja0AqlVoBToDlP+QugM+qqm58DUgmk8vAMbD0h9wF8FVV1bWvAYlEYgk4Ahb/kLsAvququvI1IB6PLwKHwMIfchfAT1VVR74G/AAsOjfBQp7VJAAAAABJRU5ErkJggg==') no-repeat;
+      background-size: contain;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <!-- Video Frame (Top 70%) -->
@@ -17,7 +40,7 @@
 
   <!-- Transaction Panel (Bottom 30%) -->
   <div class="bottom-sheet">
-    <!-- Row 1: Membership Buttons -->
+    <!-- Membership Buttons Row -->
     <div class="button-row">
       <button class="membership-btn" data-tier="free">Free Member</button>
       <button class="membership-btn" data-tier="early">Early Member</button>
@@ -25,7 +48,7 @@
       <button class="membership-btn" data-tier="star">Star Member</button>
     </div>
 
-    <!-- Row 2: Wallet & Private Sale -->
+    <!-- Wallet & Countdown Row -->
     <div class="button-row">
       <button id="connectWallet" class="action-btn">Link Wallet</button>
       <div class="countdown-box">
@@ -35,7 +58,7 @@
       </div>
     </div>
 
-    <!-- Row 3: Swap & Mining -->
+    <!-- Swap & Mining Row -->
     <div class="button-row">
       <button id="swapBtn" class="action-btn">Swap</button>
       <div class="mining-box">
@@ -54,21 +77,21 @@
       </div>
     </div>
 
-    <!-- Row 4: Save & Earn -->
+    <!-- Save & Earn Row -->
     <div class="button-row save-row">
       <button id="saveBtn" class="save-btn">Save & Earn (15% APR)</button>
     </div>
   </div>
 
-  <!-- Wallet Connection Modal -->
+  <!-- Wallet Modal -->
   <div id="walletModal" class="modal">
     <div class="modal-content">
       <h3>Connect Wallet</h3>
       <button class="wallet-option" data-wallet="metamask">
-        <img src="assets/metamask-icon.png" width="20" alt=""> MetaMask
+        <span class="wallet-icon metamask-icon"></span> MetaMask
       </button>
       <button class="wallet-option" data-wallet="truyan">
-        <img src="assets/truyan-icon.png" width="20" alt=""> TruYan Wallet
+        <span class="wallet-icon truyan-icon"></span> TruYan Wallet
       </button>
     </div>
   </div>
@@ -77,4 +100,4 @@
   <script src="js/wallet.js"></script>
   <script src="js/mining.js"></script>
 </body>
-</html>
+       </html>
