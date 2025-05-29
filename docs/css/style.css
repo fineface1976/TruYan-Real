@@ -1,4 +1,73 @@
-/* Add these to your existing CSS */
+ /* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video Container (70% height) */
+.video-container {
+  height: 70vh;
+  width: 100%;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom Sheet (30% height) */
+.bottom-sheet {
+  height: 30vh;
+  background: #0a192f;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.handle {
+  width: 50px;
+  height: 5px;
+  background: #00ff88;
+  border-radius: 5px;
+  margin: 0 auto 10px;
+}
+
+/* Wallet Row */
+.wallet-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.wallet-btn {
+  flex: 1;
+  padding: 10px;
+  background: #1a365f;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.wallet-address {
+  font-family: monospace;
+  font-size: 12px;
+  color: #00ff88;
+  word-break: break-all;
+  padding: 10px;
+}
 
 /* Swap Container */
 .swap-container {
@@ -11,22 +80,29 @@
 .swap-input {
   display: flex;
   border: 1px solid #00ff88;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .swap-input input {
   flex: 1;
   padding: 10px;
-  background: #111;
-  color: white;
+  background: #1a365f;
+  color: #fff;
   border: none;
 }
 
-.token-select, .swap-input select {
+.token-label {
   padding: 10px;
-  background: #333;
-  color: white;
+  background: #00ff88;
+  color: #000;
+  font-weight: bold;
+}
+
+.swap-input select {
+  padding: 10px;
+  background: #1a365f;
+  color: #fff;
   border: none;
   min-width: 80px;
 }
@@ -34,35 +110,36 @@
 .swap-arrow {
   text-align: center;
   color: #00ff88;
+  font-size: 20px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px;
+  background: #00ff88;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 /* Action Buttons */
-.action-buttons {
+.action-row {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 12px;
 }
 
-.btn-compact {
-  flex: 1;
-  padding: 8px;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 12px;
-}
-
 /* Utility Buttons */
-.utility-buttons {
+.utility-row {
   display: flex;
   gap: 8px;
 }
 
-.btn-toggle {
+.mining-btn {
   flex: 1;
-  padding: 8px;
-  background: #222;
+  padding: 10px;
+  background: #1a365f;
   color: #00ff88;
   border: 1px solid #00ff88;
   border-radius: 8px;
@@ -72,11 +149,12 @@
   gap: 5px;
 }
 
-.btn-invest {
+.invest-btn {
   flex: 2;
-  padding: 8px;
+  padding: 10px;
   background: #ff6b00;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 8px;
+  font-weight: bold;
 }
