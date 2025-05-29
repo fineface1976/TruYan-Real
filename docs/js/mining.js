@@ -1,9 +1,16 @@
- // Mining Counter
+ // Mining Counter Updates
 function updateMining() {
-  document.getElementById('miningSpeed').textContent = '0.005 MZLx/ms';
-  document.getElementById('minedToday').textContent = '12.5 MZLx';
-  document.getElementById('minedTotal').textContent = '1,240 MZLx';
+  const elements = {
+    miningSpeed: "0.005 MZLx/ms",
+    minedToday: "12.5 MZLx",
+    minedTotal: "1,240 MZLx"
+  };
+
+  Object.entries(elements).forEach(([id, value]) => {
+    document.getElementById(id).textContent = value;
+  });
 }
 
-setInterval(updateMining, 100);
+// Update every second
+setInterval(updateMining, 1000);
 updateMining();
