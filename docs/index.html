@@ -1,4 +1,4 @@
-y <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,66 +7,64 @@ y <!DOCTYPE html>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Video Frame (70%) -->
+  <!-- Video Container (70%) -->
   <div class="video-container">
-    <!-- Restored Title Header -->
-    <div class="header">
+    <div class="video-overlay">
       <h1>TruYan</h1>
-      <p class="subtitle">Social Media with Treasure by MAZOL</p>
+      <p>Social Media with Treasure by MAZOL</p>
     </div>
     <video autoplay loop muted playsinline>
-      <source src="assets/sample-video.mp4" type="video/mp4">
-      Your browser doesn't support HTML5 video.
+      <source src="assets/videos/sample.mp4" type="video/mp4">
     </video>
   </div>
 
   <!-- Transaction Panel (30%) -->
-  <div class="bottom-sheet">
-    <!-- Row 1: Membership Buttons -->
-    <div class="button-row">
-      <button class="membership-btn" data-tier="free">Free Member</button>
-      <button class="membership-btn" data-tier="early">Early Member</button>
-      <button class="membership-btn" data-tier="power">Power Member</button>
-      <button class="membership-btn" data-tier="star">Star Member</button>
+  <div class="transaction-panel">
+    <!-- Membership Row -->
+    <div class="row membership-row">
+      <button class="membership-btn" data-tier="free">Free</button>
+      <button class="membership-btn" data-tier="early">Early</button>
+      <button class="membership-btn" data-tier="power">Power</button>
+      <button class="membership-btn" data-tier="star">Star</button>
     </div>
 
-    <!-- Row 2: Private Sale Countdown -->
-    <div class="countdown-fullwidth">
-      <div class="countdown-header">Private Sale Only:</div>
-      <div class="countdown-timer">120d 00h 00m</div>
-      <button class="buy-btn">Buy</button>
+    <!-- Countdown Row -->
+    <div class="row countdown-row">
+      <div class="countdown-box">
+        <span>Private Sale:</span>
+        <span id="countdown">120d 00h 00m</span>
+        <button class="buy-btn">Buy</button>
+      </div>
     </div>
 
-    <!-- Row 3: Mining Section -->
-    <div class="mining-container">
-      <button id="miningToggle" class="mining-btn">
-        <span id="miningStatus">MINE MAZOL: OFF</span>
-      </button>
+    <!-- Mining Row -->
+    <div class="row mining-row">
+      <button id="miningToggle" class="mining-btn off">MINE MAZOL</button>
       <div class="mining-stats">
-        <div class="mining-stat">
-          <div class="mining-label">Speed:</div>
-          <div class="mining-value" id="miningSpeed">0.000 MZLx/ms</div>
+        <div class="stat">
+          <span>Speed:</span>
+          <span id="miningSpeed">0.000 MZLx/ms</span>
         </div>
-        <div class="mining-stat">
-          <div class="mining-label">Session:</div>
-          <div class="mining-value" id="miningTimer">24:00:00</div>
+        <div class="stat">
+          <span>Time Left:</span>
+          <span id="miningTimer">24:00:00</span>
         </div>
-        <div class="mining-stat">
-          <div class="mining-label">Total:</div>
-          <div class="mining-value" id="minedTotal">0 MZLx</div>
+        <div class="stat">
+          <span>Total:</span>
+          <span id="minedTotal">0 MZLx</span>
         </div>
       </div>
     </div>
 
-    <!-- Row 4: Action Buttons -->
-    <div class="action-row">
+    <!-- Action Row -->
+    <div class="row action-row">
       <button id="connectWallet" class="action-btn">Link Wallet</button>
       <button id="swapBtn" class="action-btn">Swap</button>
-      <button id="saveBtn" class="action-btn">Save & Earn (15%)</button>
+      <button id="saveBtn" class="action-btn">Save & Earn</button>
     </div>
   </div>
 
-  <!-- Wallet Modal -->
+  <!-- Modals -->
   <div id="walletModal" class="modal">
     <div class="modal-content">
       <h3>Connect Wallet</h3>
@@ -75,18 +73,8 @@ y <!DOCTYPE html>
     </div>
   </div>
 
+  <script src="js/auth.js"></script>
   <script src="js/wallet.js"></script>
   <script src="js/mining.js"></script>
 </body>
-</html>
-
-<div id="swapModal" class="modal">
-  <div class="modal-content">
-    <h3>P2P Exchange</h3>
-    <div class="swap-options">
-      <button class="swap-option" data-type="instant">Instant Swap</button>
-      <button class="swap-option" data-type="p2p">P2P Escrow</button>
-    </div>
-    <div id="swapInterface"></div>
-  </div>
-</div>
+  </html>
