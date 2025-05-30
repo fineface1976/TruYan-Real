@@ -1,0 +1,5 @@
+ <div class="social-share">
+  <button class="share-btn" data-platform="tiktok"><img src="assets/tiktok-icon.png" alt="TikTok"></button>
+  <button class="share-btn" data-platform="youtube"><img src="assets/youtube-icon.png" alt="YouTube"></button>
+  <button class="share-btn" data-platform="facebook"><img src="assets/facebook-icon.png" alt="Facebook"></button>
+</div>
