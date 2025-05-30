@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,25 +7,30 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Video Container (70%) -->
+  <!-- Video Section (70%) -->
   <div class="video-container">
     <div class="video-overlay">
       <h1>TruYan</h1>
       <p>Social Media with Treasure by MAZOL</p>
     </div>
     <video autoplay loop muted playsinline>
-      <source src="assets/videos/sample.mp4" type="video/mp4">
+      <source src="assets/videos/demo.mp4" type="video/mp4">
     </video>
+    <div class="social-share">
+      <button data-platform="tiktok"><img src="assets/icons/tiktok.png" alt="TikTok"></button>
+      <button data-platform="youtube"><img src="assets/icons/youtube.png" alt="YouTube"></button>
+      <button data-platform="instagram"><img src="assets/icons/instagram.png" alt="Instagram"></button>
+    </div>
   </div>
 
   <!-- Transaction Panel (30%) -->
   <div class="transaction-panel">
     <!-- Membership Row -->
     <div class="row membership-row">
-      <button class="membership-btn" data-tier="free">Free</button>
-      <button class="membership-btn" data-tier="early">Early</button>
-      <button class="membership-btn" data-tier="power">Power</button>
-      <button class="membership-btn" data-tier="star">Star</button>
+      <button data-tier="free">Free</button>
+      <button data-tier="early">Early</button>
+      <button data-tier="power">Power</button>
+      <button data-tier="star">Star</button>
     </div>
 
     <!-- Countdown Row -->
@@ -58,9 +63,9 @@
 
     <!-- Action Row -->
     <div class="row action-row">
-      <button id="connectWallet" class="action-btn">Link Wallet</button>
-      <button id="swapBtn" class="action-btn">Swap</button>
-      <button id="saveBtn" class="action-btn">Save & Earn</button>
+      <button id="connectWallet">Link Wallet</button>
+      <button id="swapBtn">Swap</button>
+      <button id="saveBtn">Save & Earn</button>
     </div>
   </div>
 
@@ -68,13 +73,13 @@
   <div id="walletModal" class="modal">
     <div class="modal-content">
       <h3>Connect Wallet</h3>
-      <button class="wallet-option" data-wallet="metamask">MetaMask</button>
-      <button class="wallet-option" data-wallet="truyan">TruYan Wallet</button>
+      <button data-wallet="metamask">MetaMask</button>
+      <button data-wallet="truyan">TruYan Wallet</button>
     </div>
   </div>
 
-  <script src="js/auth.js"></script>
-  <script src="js/wallet.js"></script>
   <script src="js/mining.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/video.js"></script>
 </body>
-  </html>
+</html>
