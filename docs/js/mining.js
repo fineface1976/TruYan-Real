@@ -51,3 +51,46 @@
       this.totalMined += 0.005;
       document.getElementById('miningSpeed').textContent = '0.005 MZLx/ms';
       document.getElementById('minedTotal').textContent = this.totalMined.toFixed(
+      3
+    ) + ' MZLx';
+    }, 1000);
+
+    // Countdown timer
+    this.sessionTimer = setInterval(() => {
+      this.remainingTime--;
+      
+      const hours = Math.floor(this.remainingTime / 3600);
+      const minutes = Math.floor((this.remainingTime % 3600) / 60);
+      const seconds = this.remainingTime % 60;
+      
+      document.getElementById('miningTimer').textContent = 
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      
+      if (this.remainingTime <= 0) {
+        this.stopMining();
+      }
+    }, 1000);
+  }
+
+  stopMining() {
+    clearInterval(this.miningInterval);
+    clearInterval(this.sessionTimer);
+    this.sessionActive = false;
+    
+    const btn = document.getElementById('miningToggle');
+    btn.classList.remove('on');
+    btn.classList.add('off');
+    
+    // Save current progress
+    const endTime = Date.now() + (this.remainingTime * 1000);
+    localStorage.setItem('miningSession', JSON.stringify({ 
+      endTime, 
+      mined: this.totalMined 
+    }));
+  }
+}
+
+// Initialize mining system when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new MiningSystem();
+});
