@@ -43,4 +43,4 @@ class VideoController {
 
 document.addEventListener('DOMContentLoaded', () => {
   new VideoController();
-})
+});
