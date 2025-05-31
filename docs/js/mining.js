@@ -59,10 +59,10 @@ class MiningSystem {
     const mins = Math.floor((remaining % 3600000) / 60000);
     const secs = Math.floor((remaining % 60000) / 1000);
     
-    document.querySelector('.stat-item:nth-child(2) span:last-child').textContent = 
+    document.querySelectorAll('.stat-value')[1].textContent = 
       `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
     
-    document.querySelector('.stat-item:nth-child(3) span:last-child').textContent = 
+    document.querySelectorAll('.stat-value')[2].textContent = 
       this.totalMined.toFixed(3) + ' MZLx';
   }
 
