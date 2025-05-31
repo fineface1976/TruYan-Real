@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,7 +37,8 @@
     <div class="row countdown-row">
       <div class="countdown-box">
         <div class="sale-info">
-          <span class="sale-title">Private Sale: MZLx/$0.001</span>
+          <span class="sale-title">Private Sale</span>
+          <span class="sale-rate">MZLx/$0.001</span>
         </div>
         <span id="countdown">120d 00h 00m</span>
         <div class="buy-btn-container">
@@ -49,24 +50,41 @@
     <!-- Mining Row -->
     <div class="row mining-row">
       <div class="mining-btn-container">
-        <button id="miningToggle">MINE MAZOL</button>
-        <div id="miningStatus" class="status-box">OFF</div>
+        <button id="miningToggle">
+          <span>MINE MAZOL</span>
+          <div id="miningStatus" class="status-circle">OFF</div>
+        </button>
       </div>
       <div class="mining-stats">
         <div class="stat-row">
-          <div class="stat-item"><span>Speed:</span><span>0.000 MZLx/ms</span></div>
-          <div class="stat-item"><span>Time:</span><span>24:00:00</span></div>
-          <div class="stat-item"><span>Total:</span><span>0 MZLx</span></div>
+          <div class="stat-item">
+            <div class="stat-title">Speed</div>
+            <div class="stat-value">0.000 MZLx/ms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-title">Time</div>
+            <div class="stat-value">24:00:00</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-title">Total</div>
+            <div class="stat-value">0 MZLx</div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Action Row -->
     <div class="row action-row">
-      <button>Link Wallet</button>
-      <button>Swap</button>
-      <button class="multi-line"><span>Save &</span><span>Earn</span></button>
-      <button class="multi-line"><span>P2P</span><span>Exchange</span></button>
+      <button class="action-btn">Link Wallet</button>
+      <button class="action-btn">Swap</button>
+      <button class="action-btn multi-line">
+        <span>Save &</span>
+        <span>Earn</span>
+      </button>
+      <button class="action-btn multi-line">
+        <span>P2P</span>
+        <span>Exchange</span>
+      </button>
     </div>
   </div>
 
