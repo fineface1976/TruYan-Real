@@ -1,4 +1,4 @@
- /* ===== RESET ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -73,9 +73,28 @@ video {
   height: 23%;
 }
 
-/* Membership Buttons */
-.membership-row button {
+/* Membership Buttons (Updated) */
+.membership-row {
+  display: flex;
+  gap: 8px;
+}
+
+.membership-btn {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.membership-label {
+  font-size: 10px;
+  text-align: center;
+  color: #00ff88;
+}
+
+.membership-row button {
+  width: 100%;
+  height: calc(100% - 16px);
   background: #0a192f;
   color: #00ff88;
   border: 1px solid #00ff88;
@@ -136,7 +155,7 @@ video {
   min-width: 60px;
 }
 
-/* ===== MINING BUTTON (UPDATED) ===== */
+/* Mining Button */
 .mining-btn-container {
   width: 30%;
 }
@@ -215,18 +234,19 @@ video {
   white-space: nowrap;
 }
 
-/* Action Buttons */
+/* Action Buttons (Updated) */
 .action-btn {
   flex: 1;
   background: #00ff88;
   color: #0a192f;
   border: none;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 13px; /* Increased from 12px */
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 4px; /* Added padding */
 }
 
 .multi-line {
@@ -236,5 +256,5 @@ video {
 }
 
 .multi-line span {
-  font-size: 11px;
-  }
+  font-size: 12px; /* Increased from 11px */
+}
