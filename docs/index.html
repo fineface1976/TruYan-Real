@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TruYan - Social Media with Treasure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan - Social Crypto Platform</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,10 +16,10 @@
       <h1>TruYan</h1>
       <p>Social Media with Treasure by MAZOL</p>
     </div>
-    <div class="social-share">
-      <button data-platform="tiktok"><img src="assets/icons/tiktok.png" alt="TikTok"></button>
-      <button data-platform="youtube"><img src="assets/icons/youtube.png" alt="YouTube"></button>
-      <button data-platform="instagram"><img src="assets/icons/instagram.png" alt="Instagram"></button>
+    <div class="social-actions">
+      <button class="like-btn">❤️ 0</button>
+      <button class="comment-btn">💬 0</button>
+      <button class="share-btn">↗️ Share</button>
     </div>
   </div>
 
@@ -27,15 +27,15 @@
   <div class="transaction-panel">
     <!-- Membership Row -->
     <div class="row membership-row">
-      <button data-tier="free">Free</button>
-      <button data-tier="early">Early</button>
-      <button data-tier="power">Power</button>
-      <button data-tier="star">Star</button>
+      <button>Free</button>
+      <button>Early</button>
+      <button>Power</button>
+      <button>Star</button>
     </div>
 
     <!-- Countdown Row -->
     <div class="row countdown-row">
-      <div class="countdown-container">
+      <div class="countdown-box">
         <span>Private Sale: MZLx/$0.001</span>
         <span id="countdown">120d 00h 00m</span>
         <button class="buy-btn">Buy</button>
@@ -49,52 +49,22 @@
         <span id="miningStatus">OFF</span>
       </div>
       <div class="mining-stats">
-        <div class="stat">
-          <span>Speed:</span>
-          <span id="miningSpeed">0.000 MZLx/ms</span>
-        </div>
-        <div class="stat">
-          <span>Time Left:</span>
-          <span id="miningTimer">24:00:00</span>
-        </div>
-        <div class="stat">
-          <span>Total:</span>
-          <span id="minedTotal">0 MZLx</span>
-        </div>
+        <div class="stat"><span>Speed:</span><span>0.000 MZLx/ms</span></div>
+        <div class="stat"><span>Time Left:</span><span>24:00:00</span></div>
+        <div class="stat"><span>Total:</span><span>0 MZLx</span></div>
       </div>
     </div>
 
     <!-- Action Row -->
     <div class="row action-row">
-      <button id="connectWallet">Link Wallet</button>
-      <button id="swapBtn">Swap</button>
-      <button id="saveBtn">Save & Earn</button>
-      <button id="p2pBtn">P2P Exchange</button>
-    </div>
-  </div>
-
-  <!-- Modals -->
-  <div id="walletModal" class="modal">
-    <div class="modal-content">
-      <h3>Connect Wallet</h3>
-      <button data-wallet="metamask">MetaMask</button>
-      <button data-wallet="truyan">TruYan Wallet</button>
-    </div>
-  </div>
-
-  <div id="p2pModal" class="modal">
-    <div class="modal-content">
-      <h3>P2P Exchange</h3>
-      <div class="p2p-form">
-        <input type="number" placeholder="Amount (MZLx)">
-        <input type="text" placeholder="Recipient Address">
-        <button id="confirmP2P">Confirm Trade</button>
-      </div>
+      <button>Link Wallet</button>
+      <button>Swap</button>
+      <button>Save & Earn</button>
+      <button>P2P Exchange</button>
     </div>
   </div>
 
   <script src="js/mining.js"></script>
-  <script src="js/wallet.js"></script>
-  <script src="js/video.js"></script>
+  <script src="js/layout.js"></script>
 </body>
 </html>
