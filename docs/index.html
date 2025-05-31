@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -87,13 +87,13 @@
 
     <!-- Action Row -->
     <div class="row action-row">
-      <button class="action-btn">Link Wallet</button>
-      <button class="action-btn">Swap</button>
-      <button class="action-btn multi-line">
+      <button id="connectWallet" class="action-btn">Link Wallet</button>
+      <button id="swapBtn" class="action-btn">Swap</button>
+      <button id="saveBtn" class="action-btn multi-line">
         <span>Save &</span>
         <span>Earn</span>
       </button>
-      <button class="action-btn multi-line">
+      <button id="p2pBtn" class="action-btn multi-line">
         <span>P2P</span>
         <span>Exchange</span>
       </button>
@@ -101,6 +101,7 @@
   </div>
 
   <script src="js/mining.js"></script>
+  <script src="js/wallet.js"></script>
   <script src="js/layout.js"></script>
 </body>
 </html>
