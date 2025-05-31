@@ -17,9 +17,9 @@
       <p>Social Media with Treasure by MAZOL</p>
     </div>
     <div class="social-actions">
-      <button class="like-btn">❤️ 0</button>
-      <button class="comment-btn">💬 0</button>
-      <button class="share-btn">↗️ Share</button>
+      <button class="like-btn">❤️</button>
+      <button class="comment-btn">💬</button>
+      <button class="share-btn">↗️</button>
     </div>
   </div>
 
@@ -36,7 +36,10 @@
     <!-- Countdown Row -->
     <div class="row countdown-row">
       <div class="countdown-box">
-        <span>Private Sale: MZLx/$0.001</span>
+        <div class="sale-info">
+          <span class="sale-title">Private Sale</span>
+          <span class="sale-rate">MZLx/$0.001</span>
+        </div>
         <span id="countdown">120d 00h 00m</span>
         <button class="buy-btn">Buy</button>
       </div>
@@ -46,12 +49,14 @@
     <div class="row mining-row">
       <div class="mining-btn-container">
         <button id="miningToggle">MINE MAZOL</button>
-        <span id="miningStatus">OFF</span>
+        <div id="miningStatus" class="status-box">OFF</div>
       </div>
       <div class="mining-stats">
-        <div class="stat"><span>Speed:</span><span>0.000 MZLx/ms</span></div>
-        <div class="stat"><span>Time Left:</span><span>24:00:00</span></div>
-        <div class="stat"><span>Total:</span><span>0 MZLx</span></div>
+        <div class="stat-row">
+          <div class="stat-item"><span>Speed:</span><span>0.000 MZLx/ms</span></div>
+          <div class="stat-item"><span>Time:</span><span>24:00:00</span></div>
+          <div class="stat-item"><span>Total:</span><span>0 MZLx</span></div>
+        </div>
       </div>
     </div>
 
@@ -59,8 +64,8 @@
     <div class="row action-row">
       <button>Link Wallet</button>
       <button>Swap</button>
-      <button>Save & Earn</button>
-      <button>P2P Exchange</button>
+      <button class="multi-line"><span>Save &</span><span>Earn</span></button>
+      <button class="multi-line"><span>P2P</span><span>Exchange</span></button>
     </div>
   </div>
 
