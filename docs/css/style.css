@@ -1,157 +1,76 @@
- /* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  background: #0a192f;
-  color: white;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan - Social Crypto Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Video Section (70vh) -->
+  <div class="video-container">
+    <video autoplay loop muted playsinline>
+      <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+      <h1>TruYan</h1>
+      <p>Social Media with Treasure by MAZOL</p>
+    </div>
+    <div class="social-actions">
+      <button class="like-btn">❤️</button>
+      <button class="comment-btn">💬</button>
+      <button class="share-btn">↗️</button>
+    </div>
+  </div>
 
-/* ===== VIDEO SECTION ===== */
-.video-container {
-  height: 70vh;
-  width: 100%;
-  position: relative;
-  background: #000;
-}
+  <!-- Transaction Panel (30vh) -->
+  <div class="transaction-panel">
+    <!-- Membership Row -->
+    <div class="row membership-row">
+      <button>Free</button>
+      <button>Early</button>
+      <button>Power</button>
+      <button>Star</button>
+    </div>
 
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    <!-- Countdown Row -->
+    <div class="row countdown-row">
+      <div class="countdown-box">
+        <div class="sale-info">
+          <span class="sale-title">Private Sale</span>
+          <span class="sale-rate">MZLx/$0.001</span>
+        </div>
+        <span id="countdown">120d 00h 00m</span>
+        <button class="buy-btn">Buy</button>
+      </div>
+    </div>
 
-.video-overlay {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 2;
-}
+    <!-- Mining Row -->
+    <div class="row mining-row">
+      <div class="mining-btn-container">
+        <button id="miningToggle">MINE MAZOL</button>
+        <div id="miningStatus" class="status-box">OFF</div>
+      </div>
+      <div class="mining-stats">
+        <div class="stat-row">
+          <div class="stat-item"><span>Speed:</span><span>0.000 MZLx/ms</span></div>
+          <div class="stat-item"><span>Time:</span><span>24:00:00</span></div>
+          <div class="stat-item"><span>Total:</span><span>0 MZLx</span></div>
+        </div>
+      </div>
+    </div>
 
-.social-actions {
-  position: absolute;
-  right: 15px;
-  bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+    <!-- Action Row -->
+    <div class="row action-row">
+      <button>Link Wallet</button>
+      <button>Swap</button>
+      <button class="multi-line"><span>Save &</span><span>Earn</span></button>
+      <button class="multi-line"><span>P2P</span><span>Exchange</span></button>
+    </div>
+  </div>
 
-.social-actions button {
-  background: rgba(0,0,0,0.5);
-  border: 2px solid #00ff88;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  color: white;
-  font-size: 16px;
-}
-
-/* ===== TRANSACTION PANEL ===== */
-.transaction-panel {
-  height: 30vh;
-  background: #1a365f;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 2px solid #00ff88;
-}
-
-.row {
-  display: flex;
-  gap: 8px;
-  height: 22%;
-  width: 100%;
-}
-
-/* Button Styles */
-button {
-  min-width: 80px;
-  height: 100%;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 12px;
-  padding: 0 8px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Specific Button Types */
-.membership-row button {
-  background: #0a192f;
-  color: #00ff88;
-  border: 1px solid #00ff88 !important;
-  flex: 1;
-}
-
-.mining-btn-container {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-#miningToggle {
-  background: #ff6b00;
-  color: white;
-  height: 70%;
-}
-
-#miningToggle.on {
-  background: #a4ff00;
-  color: #0a192f;
-}
-
-#miningStatus {
-  font-size: 12px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.mining-stats {
-  flex: 1;
-  background: #0a192f;
-  border: 2px solid #00ff88;
-  border-radius: 8px;
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.stat {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-}
-
-.countdown-box {
-  flex: 1;
-  background: #0a192f;
-  border: 2px solid #00ff88;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.action-row button {
-  background: #00ff88;
-  color: #0a192f;
-  flex: 1;
-}
+  <script src="js/mining.js"></script>
+  <script src="js/layout.js"></script>
+</body>
+</html>
