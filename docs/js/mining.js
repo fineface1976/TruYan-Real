@@ -4,61 +4,37 @@
     this.endTime = null;
     this.totalMined = 0;
     this.isMining = false;
-
+    
     this.init();
   }
 
   init() {
     this.loadSession();
-    this.setupButton();
+    document.getElementById('miningToggle').addEventListener('click', () => this.toggleMining());
   }
 
-  loadSession() {
-    const savedSession = localStorage.getItem('miningSession');
-    if (savedSession) {
-      const { endTime, mined } = JSON.parse(savedSession);
-      this.endTime = new Date(endTime);
-      this.totalMined = mined || 0;
-      
-      if (new Date() < this.endTime) {
-        this.startMining(false);
-      }
+  toggleMining() {
+    if (this.isMining) {
+      this.stopMining();
+    } else {
+      this.startMining();
     }
   }
 
-  setupButton() {
-    const btn = document.getElementById('miningToggle');
-    const status = document.getElementById('miningStatus');
-    
-    btn.addEventListener('click', () => {
-      if (this.isMining) {
-        this.stopMining();
-      } else {
-        this.startMining(true);
-      }
-    });
-  }
-
-  startMining(newSession) {
-    if (newSession) {
-      this.endTime = new Date(Date.now() + 86400000); // 24 hours
-      this.totalMined = 0;
-    }
-
+  startMining() {
     this.isMining = true;
-    document.getElementById('miningToggle').classList.add('active');
+    this.endTime = Date.now() + 86400000; // 24 hours
+    
+    const btn = document.getElementById('miningToggle');
+    btn.classList.add('on');
+    btn.classList.remove('off');
     document.getElementById('miningStatus').textContent = 'ON';
     
-    localStorage.setItem('miningSession', JSON.stringify({
-      endTime: this.endTime,
-      mined: this.totalMined
-    }));
-
     this.miningInterval = setInterval(() => {
       this.totalMined += 0.005;
       this.updateUI();
       
-      if (new Date() >= this.endTime) {
+      if (Date.now() >= this.endTime) {
         this.stopMining();
       }
     }, 1000);
@@ -67,24 +43,35 @@
   stopMining() {
     clearInterval(this.miningInterval);
     this.isMining = false;
-    document.getElementById('miningToggle').classList.remove('active');
+    
+    const btn = document.getElementById('miningToggle');
+    btn.classList.remove('on');
+    btn.classList.add('off');
     document.getElementById('miningStatus').textContent = 'OFF';
   }
 
   updateUI() {
-    // Update timer
-    const now = new Date();
-    const diff = this.endTime - now;
-    
-    const hours = Math.floor(diff / 3600000);
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
+    const remaining = Math.max(0, this.endTime - Date.now());
+    const hours = Math.floor(remaining / 3600000);
+    const mins = Math.floor((remaining % 3600000) / 60000);
+    const secs = Math.floor((remaining % 60000) / 1000);
     
     document.getElementById('miningTimer').textContent = 
-      `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
     
-    // Update totals
     document.getElementById('minedTotal').textContent = this.totalMined.toFixed(3) + ' MZLx';
+  }
+
+  loadSession() {
+    const saved = localStorage.getItem('miningSession');
+    if (saved) {
+      const { endTime, mined } = JSON.parse(saved);
+      if (Date.now() < endTime) {
+        this.endTime = endTime;
+        this.totalMined = mined;
+        this.startMining();
+      }
+    }
   }
 }
 
