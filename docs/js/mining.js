@@ -1,4 +1,4 @@
- class MiningSystem {
+class MiningSystem {
   constructor() {
     this.miningInterval = null;
     this.endTime = null;
