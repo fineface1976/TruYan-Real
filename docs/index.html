@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TruYan - Social Media with Treasure</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Video Section (70%) -->
+  <!-- Video Section (70vh) -->
   <div class="video-container">
+    <video autoplay loop muted playsinline>
+      <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+    </video>
     <div class="video-overlay">
       <h1>TruYan</h1>
       <p>Social Media with Treasure by MAZOL</p>
     </div>
-    <video autoplay loop muted playsinline>
-      <source src="assets/videos/demo.mp4" type="video/mp4">
-    </video>
     <div class="social-share">
       <button data-platform="tiktok"><img src="assets/icons/tiktok.png" alt="TikTok"></button>
       <button data-platform="youtube"><img src="assets/icons/youtube.png" alt="YouTube"></button>
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <!-- Transaction Panel (30%) -->
+  <!-- Transaction Panel (30vh) -->
   <div class="transaction-panel">
     <!-- Membership Row -->
     <div class="row membership-row">
@@ -35,8 +35,8 @@
 
     <!-- Countdown Row -->
     <div class="row countdown-row">
-      <div class="countdown-box">
-        <span>Private Sale:</span>
+      <div class="countdown-container">
+        <span>Private Sale: MZLx/$0.001</span>
         <span id="countdown">120d 00h 00m</span>
         <button class="buy-btn">Buy</button>
       </div>
@@ -44,7 +44,10 @@
 
     <!-- Mining Row -->
     <div class="row mining-row">
-      <button id="miningToggle" class="mining-btn off">MINE MAZOL</button>
+      <div class="mining-btn-container">
+        <button id="miningToggle">MINE MAZOL</button>
+        <span id="miningStatus">OFF</span>
+      </div>
       <div class="mining-stats">
         <div class="stat">
           <span>Speed:</span>
@@ -66,6 +69,7 @@
       <button id="connectWallet">Link Wallet</button>
       <button id="swapBtn">Swap</button>
       <button id="saveBtn">Save & Earn</button>
+      <button id="p2pBtn">P2P Exchange</button>
     </div>
   </div>
 
@@ -75,6 +79,17 @@
       <h3>Connect Wallet</h3>
       <button data-wallet="metamask">MetaMask</button>
       <button data-wallet="truyan">TruYan Wallet</button>
+    </div>
+  </div>
+
+  <div id="p2pModal" class="modal">
+    <div class="modal-content">
+      <h3>P2P Exchange</h3>
+      <div class="p2p-form">
+        <input type="number" placeholder="Amount (MZLx)">
+        <input type="text" placeholder="Recipient Address">
+        <button id="confirmP2P">Confirm Trade</button>
+      </div>
     </div>
   </div>
 
