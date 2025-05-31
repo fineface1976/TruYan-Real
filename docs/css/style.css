@@ -1,75 +1,211 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TruYan - Social Crypto Platform</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- Video Section (70vh) -->
-  <div class="video-container">
-    <video autoplay loop muted playsinline>
-      <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay">
-      <h1>TruYan</h1>
-      <p>Social Media with Treasure by MAZOL</p>
-    </div>
-    <div class="social-actions">
-      <button class="like-btn">❤️</button>
-      <button class="comment-btn">💬</button>
-      <button class="share-btn">↗️</button>
-    </div>
-  </div>
+ /* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Transaction Panel (30vh) -->
-  <div class="transaction-panel">
-    <!-- Membership Row -->
-    <div class="row membership-row">
-      <button>Free</button>
-      <button>Early</button>
-      <button>Power</button>
-      <button>Star</button>
-    </div>
+body {
+  font-family: Arial, sans-serif;
+  background: #0a192f;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    <!-- Countdown Row -->
-    <div class="row countdown-row">
-      <div class="countdown-box">
-        <div class="sale-info">
-          <span class="sale-title">Private Sale</span>
-          <span class="sale-rate">MZLx/$0.001</span>
-        </div>
-        <span id="countdown">120d 00h 00m</span>
-        <button class="buy-btn">Buy</button>
-      </div>
-    </div>
+/* ===== VIDEO SECTION ===== */
+.video-container {
+  height: 70vh;
+  width: 100%;
+  position: relative;
+  background: #000;
+}
 
-    <!-- Mining Row -->
-    <div class="row mining-row">
-      <div class="mining-btn-container">
-        <button id="miningToggle">MINE MAZOL</button>
-        <div id="miningStatus" class="status-box">OFF</div>
-      </div>
-      <div class="mining-stats">
-        <div class="stat-row">
-          <div class="stat-item"><span>Speed:</span><span>0.000 MZLx/ms</span></div>
-          <div class="stat-item"><span>Time:</span><span>24:00:00</span></div>
-          <div class="stat-item"><span>Total:</span><span>0 MZLx</span></div>
-        </div>
-      </div>
-    </div>
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    <!-- Action Row -->
-    <div class="row action-row">
-      <button>Link Wallet</button>
-      <button>Swap</button>
-      <button class="multi-line"><span>Save &</span><span>Earn</span></button>
-      <button class="multi-line"><span>P2P</span><span>Exchange</span></button>
-    </div>
-  </div>
+.video-overlay {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+}
 
-  <script src="js/mining.js"></script>
-  <script src="js/layout.js"></script>
-</body>
-</html>
+.social-actions {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-actions button {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+
+/* ===== TRANSACTION PANEL ===== */
+.transaction-panel {
+  height: 30vh;
+  background: #1a365f;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 2px solid #00ff88;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  height: 23%;
+}
+
+/* Membership Buttons */
+.membership-row button {
+  flex: 1;
+  background: #0a192f;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+/* Countdown Box */
+.countdown-box {
+  flex: 1;
+  background: #0a192f;
+  border: 2px solid #00ff88;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.sale-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sale-title {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.sale-rate {
+  font-size: 9px;
+  opacity: 0.9;
+}
+
+#countdown {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.buy-btn {
+  background: #a4ff00;
+  color: #0a192f;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  height: 24px;
+}
+
+/* Mining Section */
+.mining-btn-container {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#miningToggle {
+  background: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  height: 70%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#miningToggle.on {
+  background: #a4ff00;
+  color: #0a192f;
+}
+
+.status-box {
+  background: #0a192f;
+  border: 1px solid #00ff88;
+  border-radius: 4px;
+  text-align: center;
+  padding: 2px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.mining-stats {
+  flex: 1;
+  background: #0a192f;
+  border: 2px solid #00ff88;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.stat-row {
+  display: flex;
+  height: 100%;
+  gap: 6px;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.stat-item span:first-child {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+/* Action Buttons */
+.action-row button {
+  flex: 1;
+  background: #00ff88;
+  color: #0a192f;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.multi-line {
+  flex-direction: column;
+  padding: 2px 0;
+}
+
+.multi-line span {
+  line-height: 1.1;
+  font-size: 10px;
+}
