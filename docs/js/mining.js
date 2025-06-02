@@ -1,9 +1,9 @@
  class MiningSystem {
   constructor() {
-    this.totalSeconds = 86400;
-    this.speed = 0.001;
+    this.totalSeconds = 86400; // 24h in seconds
     this.isMining = false;
     this.interval = null;
+    this.baseSpeed = 0.001;
 
     document.getElementById('miningToggle').addEventListener('click', () => {
       this.isMining ? this.stop() : this.start();
@@ -12,20 +12,28 @@
 
   start() {
     this.isMining = true;
+    const btn = document.getElementById('miningToggle');
+    btn.classList.add('on');
+    btn.classList.remove('off');
+    document.getElementById('miningStatus').textContent = 'ON';
+
     this.interval = setInterval(() => {
       this.totalSeconds--;
       this.updateUI();
+      
       if (this.totalSeconds <= 0) {
         this.stop();
-        alert('Mining complete!');
+        alert("Mining cycle completed!");
       }
     }, 1000);
-    document.getElementById('miningStatus').textContent = 'ON';
   }
 
   stop() {
     clearInterval(this.interval);
     this.isMining = false;
+    const btn = document.getElementById('miningToggle');
+    btn.classList.add('off');
+    btn.classList.remove('on');
     document.getElementById('miningStatus').textContent = 'OFF';
   }
 
@@ -38,10 +46,10 @@
       `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
     
     document.getElementById('miningSpeed').textContent = 
-      `${this.speed.toFixed(3)} MZLx/hr`;
+      `${this.baseSpeed.toFixed(3)} MZLx/hr`;
     
     document.getElementById('totalMined').textContent = 
-      `${((86400 - this.totalSeconds) * this.speed / 3600).toFixed(6)} MZLx`;
+      `${((86400 - this.totalSeconds) * this.baseSpeed / 3600).toFixed(6)} MZLx`;
   }
 }
 
