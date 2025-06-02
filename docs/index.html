@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>TruYan - True Value As We Yan</title>
+  <title>TruYan - MAZOL Token Platform</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
 </head>
 <body>
   <!-- Video Section (70vh) -->
   <div class="video-container">
-    <video autoplay loop muted playsinline>
+    <video autoplay loop muted playsinline id="mainVideo">
       <source src="assets/demo.mp4" type="video/mp4">
+      Your browser doesn't support HTML5 video.
     </video>
     <div class="video-overlay">
       <h1>TruYan</h1>
@@ -45,6 +47,18 @@
       </button>
     </div>
 
+    <!-- Private Sale Countdown -->
+    <div class="row countdown-row">
+      <div class="countdown-box">
+        <div class="sale-info">
+          <span class="sale-title">Private Sale</span>
+          <span class="sale-rate">MZLx/$0.001</span>
+        </div>
+        <span id="countdown">120d 00h 00m</span>
+        <button id="buyBtn" class="buy-btn">Buy</button>
+      </div>
+    </div>
+
     <!-- Mining Dashboard -->
     <div class="row mining-row">
       <button id="miningToggle">
@@ -76,10 +90,22 @@
     </div>
   </div>
 
-  <script src="js/social.js"></script>
+  <!-- Hidden MLM Referral Form -->
+  <div id="mlmModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Invite Friends</h3>
+      <input type="text" id="referralCode" placeholder="Your Referral Code: TRUY123">
+      <button id="copyBtn">Copy Link</button>
+    </div>
+  </div>
+
+  <script src="js/social-hook.js"></script>
   <script src="js/membership.js"></script>
   <script src="js/mining.js"></script>
+  <script src="js/countdown.js"></script>
   <script src="js/wallet.js"></script>
   <script src="js/layout.js"></script>
+  <script src="assets/flutterwave.js"></script>
 </body>
-</html>
+ </html>
