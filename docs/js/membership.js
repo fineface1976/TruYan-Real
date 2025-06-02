@@ -1,44 +1,28 @@
- // Badge assignment logic
-function assignBadge(userTier) {
-  const badges = {
-    free: '🎖️',
-    early: '🥉', 
-    power: '🥈',
-    star: '🥇'
-  };
-  return badges[userTier];
-}
-
-// Example usage
-const user = { tier: 'early' };
-document.getElementById('userBadge').textContent = assignBadge(user.tier);
-
-const membershipBenefits = {
-  free: {
-    miningRate: 5,
-    canPost: true,
-    canVote: false,
-    maxVideoLength: 30
-  },
-  early: {
-    miningRate: 10,
-    canPost: true,
-    canVote: true,
-    maxVideoLength: 60
-  },
-  power: {
-    miningRate: 20,
-    canPost: true,
-    canVote: true,
-    maxVideoLength: 180,
-    escrowAccess: true
-  },
-  star: {
-    miningRate: 40,
-    canPost: true,
-    canVote: true,
-    maxVideoLength: 300,
-    escrowAccess: true,
-    priceVeto: true
-  }
-};
+ // Membership Registration with Flutterwave
+document.querySelectorAll('.membership-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const tier = this.id;
+    const cost = this.querySelector('.member-label').textContent;
+    
+    if (tier === 'freeMember') {
+      alert('Free membership activated!');
+    } else {
+      if (confirm(`Register for ${tier} (${cost})?`)) {
+        // Flutterwave payment
+        FlutterwaveCheckout({
+          public_key: "YOUR_FLUTTERWAVE_KEY",
+          tx_ref: `truyan-${tier}-${Date.now()}`,
+          amount: parseFloat(cost),
+          currency: "ETH",
+          payment_options: "card,ussd,banktransfer",
+          callback: function(response) {
+            alert(`Payment successful! ${tier} benefits unlocked.`);
+          },
+          onclose: function() {
+            alert('Payment cancelled');
+          }
+        });
+      }
+    }
+  });
+});
