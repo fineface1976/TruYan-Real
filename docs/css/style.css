@@ -1,4 +1,4 @@
- /* ===== Core Layout ===== */
+ /* ===== Core Fixes ===== */
 body {
   margin: 0;
   padding: 0;
@@ -9,11 +9,10 @@ body {
   overflow: hidden;
 }
 
-/* Video Section (70%) */
+/* Video Section */
 .video-container {
-  height: 70vh;
+  height: 70vh !important;
   position: relative;
-  background: black;
 }
 
 video {
@@ -22,124 +21,64 @@ video {
   object-fit: cover;
 }
 
-.video-overlay {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.video-overlay h1 {
-  color: #00ff88;
-  font-size: 2.5rem;
-  text-shadow: 0 0 10px rgba(0,0,0,0.8);
-}
-
-.social-actions {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.social-actions button {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 1px solid #00ff88;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  font-size: 1.2rem;
-}
-
-/* Transaction Panel (30%) */
+/* Transaction Panel */
 .transaction-panel {
-  height: 30vh;
-  background: #1a365f;
-  padding: 15px;
+  height: 30vh !important;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  border-top: 2px solid #00ff88;
+  gap: 8px;
+  padding: 10px;
 }
 
 .row {
   display: flex;
-  gap: 10px;
-  flex: 1;
+  gap: 8px;
+  height: 23%;
 }
 
-/* Membership Tiers */
-.membership-btn {
-  flex: 1;
-  background: #0a192f;
-  border: 1px solid #00ff88;
-  border-radius: 8px;
-  color: #00ff88;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Mining Button Colors */
+#miningToggle.on {
+  background: #00ff88 !important;
 }
 
-.tier {
-  font-weight: bold;
-  font-size: 1rem;
+#miningToggle.off {
+  background: #ff6b00 !important;
 }
 
-.member-label {
-  font-size: 0.7rem;
-  opacity: 0.9;
-}
-
-/* Mining Section */
-#miningToggle {
-  width: 120px;
-  background: #ff6b00;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
+/* Private Sale Box */
+.countdown-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
-}
-
-#miningStatus {
-  background: #0a192f;
-  border: 1px solid #00ff88;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: grid;
-  place-items: center;
-  font-size: 0.7rem;
-}
-
-.mining-stats {
-  flex: 1;
+  padding: 0 10px;
   background: #0a192f;
   border: 1px solid #00ff88;
   border-radius: 8px;
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
-}
-
-.stat-item {
-  text-align: center;
-  font-size: 0.8rem;
+  width: 100%;
 }
 
 /* Action Buttons */
 .action-row button {
-  flex: 1;
-  background: #00ff88;
-  color: #0a192f;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  font-size: 12px;
+  padding: 5px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #1a365f;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  border: 2px solid #00ff88;
 }
