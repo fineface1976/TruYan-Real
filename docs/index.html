@@ -10,96 +10,74 @@
   <!-- Video Section (70vh) -->
   <div class="video-container">
     <video autoplay loop muted playsinline>
-      <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+      <source src="assets/demo.mp4" type="video/mp4">
     </video>
     <div class="video-overlay">
       <h1>TruYan</h1>
       <p>Socials Powered by MAZOL Token</p>
     </div>
     <div class="social-actions">
-      <button class="like-btn">❤️</button>
-      <button class="comment-btn">💬</button>
-      <button class="share-btn">↗️</button>
+      <button id="likeBtn">❤️</button>
+      <button id="commentBtn">💬</button>
+      <button id="shareBtn">↗️</button>
     </div>
   </div>
 
   <!-- Transaction Panel (30vh) -->
   <div class="transaction-panel">
-    <!-- Membership Row -->
+    <!-- Membership Tiers -->
     <div class="row membership-row">
-      <button class="membership-btn">
+      <button id="freeMember" class="membership-btn">
         <span class="tier">Free</span>
         <span class="member-label">Member</span>
       </button>
-      <button class="membership-btn">
-        <span class="tier">Early</span>
-        <span class="member-label">Member</span>
+      <button id="bronzeMember" class="membership-btn">
+        <span class="tier">Bronze</span>
+        <span class="member-label">0.01 ETH</span>
       </button>
-      <button class="membership-btn">
-        <span class="tier">Power</span>
-        <span class="member-label">Member</span>
+      <button id="silverMember" class="membership-btn">
+        <span class="tier">Silver</span>
+        <span class="member-label">0.05 ETH</span>
       </button>
-      <button class="membership-btn">
-        <span class="tier">Star</span>
-        <span class="member-label">Member</span>
+      <button id="goldMember" class="membership-btn">
+        <span class="tier">Gold</span>
+        <span class="member-label">0.1 ETH</span>
       </button>
     </div>
 
-    <!-- Countdown Row -->
-    <div class="row countdown-row">
-      <div class="countdown-box">
-        <div class="sale-info">
-          <span class="sale-title">Private Sale</span>
-          <span class="sale-rate">MZLx/$0.001</span>
-        </div>
-        <span id="countdown">120d 00h 00m</span>
-        <div class="buy-btn-container">
-          <button class="buy-btn">Buy</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mining Row -->
+    <!-- Mining Dashboard -->
     <div class="row mining-row">
-      <div class="mining-btn-container">
-        <button id="miningToggle">
-          <span>MINE MAZOL</span>
-          <div id="miningStatus" class="status-circle">OFF</div>
-        </button>
-      </div>
+      <button id="miningToggle">
+        <span>MINE MAZOL</span>
+        <div id="miningStatus">OFF</div>
+      </button>
       <div class="mining-stats">
-        <div class="stat-row">
-          <div class="stat-item">
-            <div class="stat-title">Speed</div>
-            <div class="stat-value">0.000 MZLx/ms</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-title">Time</div>
-            <div class="stat-value">24:00:00</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-title">Total</div>
-            <div class="stat-value">0 MZLx</div>
-          </div>
+        <div class="stat-item">
+          <div>Speed</div>
+          <div id="miningSpeed">0.000 MZLx/hr</div>
+        </div>
+        <div class="stat-item">
+          <div>Time</div>
+          <div id="miningTime">24:00:00</div>
+        </div>
+        <div class="stat-item">
+          <div>Total</div>
+          <div id="totalMined">0 MZLx</div>
         </div>
       </div>
     </div>
 
-    <!-- Action Row -->
+    <!-- Action Buttons -->
     <div class="row action-row">
-      <button id="connectWallet" class="action-btn">Link Wallet</button>
-      <button id="swapBtn" class="action-btn">Swap</button>
-      <button id="saveBtn" class="action-btn multi-line">
-        <span>Save &</span>
-        <span>Earn</span>
-      </button>
-      <button id="p2pBtn" class="action-btn multi-line">
-        <span>P2P</span>
-        <span>Exchange</span>
-      </button>
+      <button id="connectWallet">Link Wallet</button>
+      <button id="swapBtn">Swap</button>
+      <button id="saveBtn">Save & Earn</button>
+      <button id="p2pBtn">P2P Trade</button>
     </div>
   </div>
 
+  <script src="js/social.js"></script>
+  <script src="js/membership.js"></script>
   <script src="js/mining.js"></script>
   <script src="js/wallet.js"></script>
   <script src="js/layout.js"></script>
