@@ -1,14 +1,14 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TruYan - Crypto Social Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruYan - True Value As We Yan</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- 70% Video Section -->
-  <div class="video-section">
+  <!-- Video Section (70vh) -->
+  <div class="video-container">
     <video autoplay loop muted playsinline>
       <source src="assets/demo.mp4" type="video/mp4">
     </video>
@@ -16,63 +16,93 @@
       <h1>TruYan</h1>
       <p>Socials Powered by MAZOL Token</p>
     </div>
-    <div class="social-buttons">
-      <button id="likeBtn">❤️ <span id="likeCount">0</span></button>
-      <button id="commentBtn">💬 <span id="commentCount">0</span></button>
+    <div class="social-actions">
+      <button id="likeBtn">❤️ <span>0</span></button>
+      <button id="commentBtn">💬 <span>0</span></button>
       <button id="shareBtn">↗️ Share</button>
     </div>
   </div>
 
-  <!-- 30% Control Panel -->
-  <div class="control-panel">
+  <!-- Transaction Panel (30vh) -->
+  <div class="transaction-panel">
     <!-- Membership Tiers -->
-    <div class="tier-container">
-      <button class="tier free">Free</button>
-      <button class="tier bronze">Bronze (0.01 ETH)</button>
-      <button class="tier silver">Silver (0.05 ETH)</button>
-      <button class="tier gold">Gold (0.1 ETH)</button>
+    <div class="row membership-row">
+      <button id="freeMember" class="membership-btn">
+        <span class="tier">Free</span>
+        <span class="member-label">Member</span>
+      </button>
+      <button id="bronzeMember" class="membership-btn">
+        <span class="tier">Bronze</span>
+        <span class="member-label">Member</span>
+      </button>
+      <button id="silverMember" class="membership-btn">
+        <span class="tier">Silver</span>
+        <span class="member-label">Member</span>
+      </button>
+      <button id="goldMember" class="membership-btn">
+        <span class="tier">Gold</span>
+        <span class="member-label">Member</span>
+      </button>
     </div>
 
     <!-- Private Sale Countdown -->
-    <div class="countdown-container">
-      <div class="sale-info">
-        <span>Private Sale</span>
-        <span>$0.001/MZLx</span>
+    <div class="row countdown-row">
+      <div class="countdown-box">
+        <div class="sale-info">
+          <span class="sale-title">Private Sale</span>
+          <span class="sale-rate">MZLx/$0.001</span>
+        </div>
+        <span id="countdown">120d 00h 00m</span>
+        <div class="buy-btn-container">
+          <button class="buy-btn">Buy</button>
+        </div>
       </div>
-      <div id="countdown">120d 00h 00m 00s</div>
-      <button id="buyBtn">Buy Now</button>
     </div>
 
     <!-- Mining Dashboard -->
-    <div class="mining-container">
-      <button id="miningToggle">
-        <span>MINE MAZOL</span>
-        <div id="miningStatus" class="off">OFF</div>
-      </button>
+    <div class="row mining-row">
+      <div class="mining-btn-container">
+        <button id="miningToggle">
+          <span>MINE MAZOL</span>
+          <div id="miningStatus" class="status-circle">OFF</div>
+        </button>
+      </div>
       <div class="mining-stats">
-        <div>
-          <span>Speed</span>
-          <span id="miningSpeed">0.000 MZLx/hr</span>
-        </div>
-        <div>
-          <span>Time Left</span>
-          <span id="miningTime">24:00:00</span>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-title">Speed</div>
+            <div class="stat-value" id="miningSpeed">0.000 MZLx/ms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-title">Time</div>
+            <div class="stat-value" id="miningTime">24:00:00</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-title">Total</div>
+            <div class="stat-value" id="totalMined">0 MZLx</div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Action Buttons -->
-    <div class="action-buttons">
-      <button id="connectWallet">Connect Wallet</button>
-      <button id="swapBtn">Swap</button>
-      <button id="saveBtn">Save & Earn</button>
-      <button id="p2pBtn">P2P Trade</button>
+    <div class="row action-row">
+      <button id="connectWallet" class="action-btn">Link Wallet</button>
+      <button id="swapBtn" class="action-btn">Swap</button>
+      <button id="saveBtn" class="action-btn multi-line">
+        <span>Save &</span>
+        <span>Earn</span>
+      </button>
+      <button id="p2pBtn" class="action-btn multi-line">
+        <span>P2P</span>
+        <span>Exchange</span>
+      </button>
     </div>
   </div>
 
   <script src="js/mining.js"></script>
-  <script src="js/countdown.js"></script>
   <script src="js/wallet.js"></script>
-  <script src="js/social.js"></script>
+  <script src="js/mlm.js"></script>
+  <script src="js/countdown.js"></script>
 </body>
-</html>
+       </html>
