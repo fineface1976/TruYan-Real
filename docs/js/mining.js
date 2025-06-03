@@ -1,9 +1,10 @@
  class MiningSystem {
   constructor() {
-    this.totalSeconds = 86400; // 24 hours
+    this.totalSeconds = 86400;
     this.isMining = false;
     this.interval = null;
-    
+    this.baseSpeed = 0.005; // 0.12 MZLx/day
+
     document.getElementById('miningToggle').addEventListener('click', () => {
       this.toggleMining();
     });
@@ -23,7 +24,7 @@
     btn.classList.add('on');
     btn.classList.remove('off');
     document.getElementById('miningStatus').textContent = 'ON';
-    
+
     this.interval = setInterval(() => {
       this.totalSeconds--;
       this.updateUI();
@@ -51,6 +52,12 @@
     
     document.getElementById('miningTime').textContent = 
       `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+    
+    document.getElementById('miningSpeed').textContent = 
+      `${this.baseSpeed.toFixed(3)} MZLx/hr`;
+    
+    document.getElementById('totalMined').textContent = 
+      `${((86400 - this.totalSeconds) * this.baseSpeed / 3600).toFixed(6)} MZLx`;
   }
 }
 
