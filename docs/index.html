@@ -5,117 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TruYan - Crypto Social Platform</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-  <script src="https://checkout.flutterwave.com/v3.js"></script>
 </head>
 <body>
-  <!-- Video Section (70vh) -->
-  <div class="video-container">
-    <video id="mainVideo" autoplay loop muted playsinline>
+  <!-- 70% Video Section -->
+  <div class="video-section">
+    <video autoplay loop muted playsinline>
       <source src="assets/demo.mp4" type="video/mp4">
     </video>
     <div class="video-overlay">
       <h1>TruYan</h1>
       <p>Socials Powered by MAZOL Token</p>
     </div>
-    <div class="social-actions">
-      <button id="likeBtn" class="social-btn"><i class="icon-like"></i></button>
-      <button id="commentBtn" class="social-btn"><i class="icon-comment"></i></button>
-      <button id="shareBtn" class="social-btn"><i class="icon-share"></i></button>
+    <div class="social-buttons">
+      <button id="likeBtn">❤️ <span id="likeCount">0</span></button>
+      <button id="commentBtn">💬 <span id="commentCount">0</span></button>
+      <button id="shareBtn">↗️ Share</button>
     </div>
   </div>
 
-  <!-- Transaction Panel (30vh) -->
-  <div class="transaction-panel">
+  <!-- 30% Control Panel -->
+  <div class="control-panel">
     <!-- Membership Tiers -->
-    <div class="panel-section">
-      <h3>Membership</h3>
-      <div class="tier-grid">
-        <button id="freeTier" class="tier-btn free">
-          <span>Free</span>
-          <small>Member</small>
-        </button>
-        <button id="bronzeTier" class="tier-btn bronze">
-          <span>Bronze</span>
-          <small>0.01 ETH</small>
-        </button>
-        <button id="silverTier" class="tier-btn silver">
-          <span>Silver</span>
-          <small>0.05 ETH</small>
-        </button>
-        <button id="goldTier" class="tier-btn gold">
-          <span>Gold</span>
-          <small>0.1 ETH</small>
-        </button>
-      </div>
+    <div class="tier-container">
+      <button class="tier free">Free</button>
+      <button class="tier bronze">Bronze (0.01 ETH)</button>
+      <button class="tier silver">Silver (0.05 ETH)</button>
+      <button class="tier gold">Gold (0.1 ETH)</button>
     </div>
 
-    <!-- Private Sale -->
-    <div class="panel-section">
-      <h3>Private Sale <span class="rate">$0.001/MZLx</span></h3>
-      <div class="countdown-box">
-        <div id="countdown">120d 00h 00m</div>
-        <button id="buyBtn" class="action-btn">Buy Tokens</button>
+    <!-- Private Sale Countdown -->
+    <div class="countdown-container">
+      <div class="sale-info">
+        <span>Private Sale</span>
+        <span>$0.001/MZLx</span>
       </div>
+      <div id="countdown">120d 00h 00m 00s</div>
+      <button id="buyBtn">Buy Now</button>
     </div>
 
     <!-- Mining Dashboard -->
-    <div class="panel-section">
-      <h3>Mining Dashboard</h3>
-      <div class="mining-control">
-        <button id="miningToggle" class="mining-btn">
-          <span>MINE MAZOL</span>
-          <div id="miningStatus" class="status-off"></div>
-        </button>
-        <div class="mining-stats">
-          <div class="stat">
-            <label>Speed</label>
-            <span id="miningSpeed">0.000 MZLx/hr</span>
-          </div>
-          <div class="stat">
-            <label>Time Left</label>
-            <span id="miningTime">24:00:00</span>
-          </div>
-          <div class="stat">
-            <label>Mined</label>
-            <span id="totalMined">0 MZLx</span>
-          </div>
+    <div class="mining-container">
+      <button id="miningToggle">
+        <span>MINE MAZOL</span>
+        <div id="miningStatus" class="off">OFF</div>
+      </button>
+      <div class="mining-stats">
+        <div>
+          <span>Speed</span>
+          <span id="miningSpeed">0.000 MZLx/hr</span>
+        </div>
+        <div>
+          <span>Time Left</span>
+          <span id="miningTime">24:00:00</span>
         </div>
       </div>
     </div>
 
     <!-- Action Buttons -->
-    <div class="action-grid">
-      <button id="connectWallet" class="action-btn">Connect Wallet</button>
-      <button id="swapBtn" class="action-btn">Swap</button>
-      <button id="saveBtn" class="action-btn">Save & Earn</button>
-      <button id="p2pBtn" class="action-btn">P2P Trade</button>
+    <div class="action-buttons">
+      <button id="connectWallet">Connect Wallet</button>
+      <button id="swapBtn">Swap</button>
+      <button id="saveBtn">Save & Earn</button>
+      <button id="p2pBtn">P2P Trade</button>
     </div>
   </div>
 
-  <!-- MLM Referral Modal -->
-  <div id="mlmModal" class="modal">
-    <div class="modal-content">
-      <h3>Earn with Friends</h3>
-      <div class="referral-code">
-        <input type="text" id="refCode" value="TRUY-USER-123" readonly>
-        <button id="copyRefBtn">Copy</button>
-      </div>
-      <div class="mlm-stats">
-        <div class="level">
-          <span>Level 1</span>
-          <span>2.5%</span>
-        </div>
-        <!-- Repeat for levels 2-6 -->
-      </div>
-    </div>
-  </div>
-
-  <script src="js/core/mining.js"></script>
-  <script src="js/core/wallet.js"></script>
-  <script src="js/core/mlm.js"></script>
-  <script src="js/ui/social.js"></script>
-  <script src="js/ui/countdown.js"></script>
-  <script src="js/ui/layout.js"></script>
+  <script src="js/mining.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/social.js"></script>
 </body>
 </html>
