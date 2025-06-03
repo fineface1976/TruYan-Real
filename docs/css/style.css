@@ -1,9 +1,9 @@
- /* ===== Core Reset ===== */
+ /* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
@@ -11,17 +11,17 @@ body {
   display: flex;
   flex-direction: column;
   background: #0a192f;
-  color: #fff;
+  color: white;
 }
 
-/* ===== Video Section ===== */
-.video-container {
+/* 70% Video Section */
+.video-section {
   height: 70vh;
   position: relative;
   background: #000;
 }
 
-#mainVideo {
+video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -41,7 +41,7 @@ body {
   text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-.social-actions {
+.social-buttons {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -50,84 +50,103 @@ body {
   gap: 15px;
 }
 
-.social-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.7);
+.social-buttons button {
+  padding: 10px 15px;
+  border-radius: 20px;
   border: 1px solid #00ff88;
+  background: rgba(0,0,0,0.5);
   color: white;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* ===== Transaction Panel ===== */
-.transaction-panel {
+/* 30% Control Panel */
+.control-panel {
   height: 30vh;
   background: #1a365f;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
   border-top: 2px solid #00ff88;
 }
 
-.panel-section {
-  flex: 1;
-  border: 1px solid #2a4a7f;
-  border-radius: 8px;
-  padding: 8px;
-}
-
-.tier-grid {
+.tier-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
-.tier-btn {
+.tier {
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tier.free { background: #95a5a6; }
+.tier.bronze { background: linear-gradient(135deg, #cd7f32, #a67c52); }
+.tier.silver { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); }
+.tier.gold { background: linear-gradient(135deg, #ffd700, #d4af37); }
+
+.countdown-container {
+  background: #0a192f;
+  border: 1px solid #00ff88;
+  border-radius: 8px;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
 }
 
-.tier-btn.free { background: #95a5a6; }
-.tier-btn.bronze { background: linear-gradient(135deg, #cd7f32, #a67c52); }
-.tier-btn.silver { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); }
-.tier-btn.gold { background: linear-gradient(135deg, #ffd700, #d4af37); }
+#countdown {
+  font-family: monospace;
+  font-size: 1.1rem;
+}
 
-.mining-btn {
+.mining-container {
+  display: flex;
+  gap: 15px;
+}
+
+#miningToggle {
   background: #ff6b00;
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
+  border-radius: 8px;
+  padding: 0 15px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.mining-btn.on { background: #00ff88; }
-
-.action-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+#miningToggle.on {
+  background: #00ff88;
 }
 
-.action-btn {
+#miningStatus {
+  background: #0a192f;
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 10px;
   background: #00ff88;
   color: #0a192f;
   border: none;
-  border-radius: 6px;
-  padding: 8px;
+  border-radius: 8px;
   font-weight: bold;
-}
-
-/* ===== Modal ===== */
-.modal {
-  /* Modal styles */
 }
